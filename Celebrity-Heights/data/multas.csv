@@ -1,0 +1,7 @@
+idMulta,idPropiedad,idPropietario,fechaExpedicion,fechaVencimiento,fechaPago,motivo,monto,pagado
+98701,401,5555,15/10/2024,15/11/2024,16/10/2024,Exceso de ruido,250000,true
+54321,802,5555,18/10/2024,18/11/2024,,Estacionamiento indebido,150000,false
+87654,701,6666,20/10/2024,20/11/2024,21/10/2024,Falta de mantenimiento,300000,true
+23456,401,5555,21/10/2024,21/11/2024,,Incumplimiento de normas,200000,false
+13579,802,5555,22/10/2024,22/11/2024,23/10/2024,Desperdicio de agua,100000,true
+24680,701,6666,23/10/2024,23/11/2024,,Falta de jardinería,180000,false

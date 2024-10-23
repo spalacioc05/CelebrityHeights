@@ -1,0 +1,6 @@
+idVisitante,nombreVisitante,idPropiedad,fechaEntrada,horaEntrada,motivo
+1001,Pedro López,401,22/10/2024,08:30,Visita familiar
+1002,María Fernández,802,22/10/2024,09:00,Reunión de negocios
+2003,Carlos Ramírez,701,22/10/2024,10:15,Entrega de documentos
+3004,Ana Torres,401,22/10/2024,11:45,Visita a amigo
+4005,Luisa García,701,22/10/2024,13:00,Mantenimiento

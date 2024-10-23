@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1111",
+    "clave": "1111",
+    "rol": "administrador",
+    "nombre": "Juan Pérez",
+    "cargo": "Gerente General",
+    "telefono": "3001234567",
+    "correo": "juan.perez@empresa.com",
+    "fechaNacimiento": "15/02/1980",
+    "fechaContratacion": "10/05/2020",
+    "salario": 5000000
+  },
+  {
+    "id": "2222",
+    "clave": "2222",
+    "rol": "seguridad",
+    "nombre": "Carlos Gómez",
+    "cargo": "Vigilante",
+    "telefono": "3009876543",
+    "correo": "carlos.gomez@empresa.com",
+    "fechaNacimiento": "20/10/1985",
+    "fechaContratacion": "15/03/2021",
+    "salario": 2000000
+  },
+  {
+    "id": "3333",
+    "clave": "3333",
+    "rol": "servicio",
+    "nombre": "María Rodríguez",
+    "cargo": "Aseadora",
+    "telefono": "3106543210",
+    "correo": "maria.rodriguez@empresa.com",
+    "fechaNacimiento": "05/06/1990",
+    "fechaContratacion": "01/08/2019",
+    "salario": 1800000
+  },
+  {
+    "id": "4444",
+    "clave": "4444",
+    "rol": "juntaDirectiva",
+    "nombre": "Ana Martínez",
+    "cargo": "Directora Financiera",
+    "telefono": "3011122334",
+    "correo": "ana.martinez@empresa.com",
+    "fechaNacimiento": "12/12/1975",
+    "fechaContratacion": "20/09/2018",
+    "salario": 7500000
+  }
+]

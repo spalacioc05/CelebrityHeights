@@ -1,0 +1,59 @@
+[
+  {
+    "id": "5555",
+    "clave": "5555",
+    "rol": "propietario",
+    "nombre": "Luis Torres",
+    "profesion": "Ingeniero Civil",
+    "ocupacion": "Gerente de Proyectos",
+    "telefono": "3001234568",
+    "correo": "luis.torres@empresa.com",
+    "fechaNacimiento": "22/07/1980",
+    "propiedades": [
+      {
+        "idPropiedad": "401",
+        "direccionPropiedad": "Carrera 70, Zona 4, Centro recidencial Celebrity Heights",
+        "sizeM2": 150,
+        "habitaciones": 3,
+        "bathrooms": 2,
+        "precioM2": 20000,
+        "fechaAdquisicion": "12/06/2021",
+        "valorAdministracion": 600000
+      },
+      {
+        "idPropiedad": "802",
+        "direccionPropiedad": "Carrera 70, Zona 8, Centro recidencial Celebrity Heights",
+        "sizeM2": 80,
+        "habitaciones": 2,
+        "bathrooms": 1,
+        "precioM2": 30000,
+        "fechaAdquisicion": "25/11/2019",
+        "valorAdministracion": 300000
+      }
+    ]
+  },
+  {
+    "id": "6666",
+    "clave": "6666",
+    "rol": "propietario",
+    "nombre": "Ana Sánchez",
+    "profesion": "Arquitecta",
+    "ocupacion": "Diseñadora de Interiores",
+    "telefono": "3109876543",
+    "correo": "ana.sanchez@empresa.com",
+    "fechaNacimiento": "10/09/1985",
+    "propiedades": [
+      {
+        "idPropiedad": "701",
+        "direccionPropiedad": "Carrera 70, Zona 7, Centro recidencial Celebrity Heights",
+        "sizeM2": 200,
+        "habitaciones": 4,
+        "bathrooms": 3,
+        "tipoPropiedad": "casa",
+        "precioM2": 15000,
+        "fechaAdquisicion": "15/02/2020",
+        "valorAdministracion": 350000
+      }
+    ]
+  }
+]
