@@ -28,8 +28,8 @@ public class Index extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonIngresar = new javax.swing.JButton();
+        jButtonAyuda = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,15 +38,15 @@ public class Index extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(197, 168, 128));
 
-        jButton2.setBackground(new java.awt.Color(197, 168, 128));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(44, 44, 44));
-        jButton2.setText("Ingresar");
+        jButtonIngresar.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonIngresar.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonIngresar.setText("Ingresar");
 
-        jButton3.setBackground(new java.awt.Color(197, 168, 128));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(44, 44, 44));
-        jButton3.setText("Ayuda");
+        jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonAyuda.setText("Ayuda");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -54,9 +54,9 @@ public class Index extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(560, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(jButtonIngresar)
                 .addGap(38, 38, 38)
-                .addComponent(jButton3)
+                .addComponent(jButtonAyuda)
                 .addGap(40, 40, 40))
         );
         jPanel2Layout.setVerticalGroup(
@@ -64,8 +64,8 @@ public class Index extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jButtonIngresar)
+                    .addComponent(jButtonAyuda))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -142,8 +142,8 @@ public class Index extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonAyuda;
+    private javax.swing.JButton jButtonIngresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

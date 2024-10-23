@@ -30,13 +30,14 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
+        jButtonSalir = new javax.swing.JButton();
+        jButtonAyuda = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jButtonVerMultas = new javax.swing.JButton();
+        jButtonEditarMultas = new javax.swing.JButton();
+        jButtonVerPropietarios = new javax.swing.JButton();
+        jButtonVerPropiedades = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,34 +45,42 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(197, 168, 128));
 
-        jButton2.setBackground(new java.awt.Color(197, 168, 128));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(44, 44, 44));
-        jButton2.setText("Actulizar Perfil");
+        jButtonActualizar.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonActualizar.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonActualizar.setText("Actulizar Perfil");
 
-        jButton3.setBackground(new java.awt.Color(197, 168, 128));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(44, 44, 44));
-        jButton3.setText("Cerrar Sesion");
+        jButtonSalir.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonSalir.setText("Cerrar Sesion");
+
+        jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonAyuda.setText("Ayuda");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jButton2)
+                .addGap(17, 17, 17)
+                .addComponent(jButtonAyuda)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(56, 56, 56))
+                .addComponent(jButtonActualizar)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSalir)
+                .addGap(16, 16, 16))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jButtonActualizar)
+                    .addComponent(jButtonSalir)
+                    .addComponent(jButtonAyuda))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -79,25 +88,25 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(46, 74, 87));
         jLabel1.setText("Junta Directiva");
 
-        jButton1.setBackground(new java.awt.Color(197, 168, 128));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(44, 44, 44));
-        jButton1.setText("Ver Multas");
+        jButtonVerMultas.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVerMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVerMultas.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVerMultas.setText("Ver Multas");
 
-        jButton4.setBackground(new java.awt.Color(197, 168, 128));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(44, 44, 44));
-        jButton4.setText("Editar Multas");
+        jButtonEditarMultas.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonEditarMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonEditarMultas.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonEditarMultas.setText("Editar Multas");
 
-        jButton5.setBackground(new java.awt.Color(197, 168, 128));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(44, 44, 44));
-        jButton5.setText("Ver Propietarios");
+        jButtonVerPropietarios.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVerPropietarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVerPropietarios.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVerPropietarios.setText("Ver Propietarios");
 
-        jButton6.setBackground(new java.awt.Color(197, 168, 128));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(44, 44, 44));
-        jButton6.setText("Ver Propiedades");
+        jButtonVerPropiedades.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVerPropiedades.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVerPropiedades.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVerPropiedades.setText("Ver Propiedades");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,45 +116,49 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
+                        .addGap(148, 148, 148)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonEditarMultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonVerMultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(52, 52, 52)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton4))
-                        .addGap(120, 120, 120)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5)
-                            .addComponent(jButton6)))
+                            .addComponent(jButtonVerPropietarios)
+                            .addComponent(jButtonVerPropiedades)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(251, 251, 251)
+                        .addGap(182, 182, 182)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton5))
+                    .addComponent(jButtonVerMultas)
+                    .addComponent(jButtonVerPropietarios))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton6))
-                .addContainerGap(110, Short.MAX_VALUE))
+                    .addComponent(jButtonEditarMultas)
+                    .addComponent(jButtonVerPropiedades))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,12 +215,13 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButtonActualizar;
+    private javax.swing.JButton jButtonAyuda;
+    private javax.swing.JButton jButtonEditarMultas;
+    private javax.swing.JButton jButtonSalir;
+    private javax.swing.JButton jButtonVerMultas;
+    private javax.swing.JButton jButtonVerPropiedades;
+    private javax.swing.JButton jButtonVerPropietarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

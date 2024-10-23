@@ -30,11 +30,12 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
+        jButtonSalir = new javax.swing.JButton();
+        jButtonAyuda = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jButtonVerSolicitudes = new javax.swing.JButton();
+        jButtonHorarios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,34 +43,47 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(197, 168, 128));
 
-        jButton2.setBackground(new java.awt.Color(197, 168, 128));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(44, 44, 44));
-        jButton2.setText("Actulizar Perfil");
+        jButtonActualizar.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonActualizar.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonActualizar.setText("Actulizar Perfil");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(197, 168, 128));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(44, 44, 44));
-        jButton3.setText("Cerrar Sesion");
+        jButtonSalir.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonSalir.setText("Cerrar Sesion");
+
+        jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonAyuda.setText("Ayuda");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jButton2)
+                .addGap(17, 17, 17)
+                .addComponent(jButtonAyuda)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(64, 64, 64))
+                .addComponent(jButtonActualizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonSalir)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jButtonActualizar)
+                    .addComponent(jButtonSalir)
+                    .addComponent(jButtonAyuda))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -77,60 +91,65 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(46, 74, 87));
         jLabel1.setText("Personal de Servicio");
 
-        jButton1.setBackground(new java.awt.Color(197, 168, 128));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(44, 44, 44));
-        jButton1.setText("Ver Solicitudes");
+        jButtonVerSolicitudes.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVerSolicitudes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVerSolicitudes.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVerSolicitudes.setText("Ver Solicitudes");
 
-        jButton8.setBackground(new java.awt.Color(197, 168, 128));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(44, 44, 44));
-        jButton8.setText("Horario de Zonas Comunes");
+        jButtonHorarios.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonHorarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonHorarios.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonHorarios.setText("Horario de Zonas Comunes");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(216, 216, 216)
-                .addComponent(jButton1)
-                .addGap(64, 64, 64)
-                .addComponent(jButton8)
-                .addContainerGap(175, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 127, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(204, 204, 204))
+                .addGap(121, 121, 121))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(jButtonVerSolicitudes))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(177, 177, 177)
+                        .addComponent(jButtonHorarios)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton8))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButtonVerSolicitudes)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonHorarios)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,10 +202,11 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButtonActualizar;
+    private javax.swing.JButton jButtonAyuda;
+    private javax.swing.JButton jButtonHorarios;
+    private javax.swing.JButton jButtonSalir;
+    private javax.swing.JButton jButtonVerSolicitudes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

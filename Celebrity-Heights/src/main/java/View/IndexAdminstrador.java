@@ -30,17 +30,20 @@ public class IndexAdminstrador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
+        jButtonSalir = new javax.swing.JButton();
+        jButtonAyuda = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        jButtonRegistrarPropietario = new javax.swing.JButton();
+        jButtonFacturar = new javax.swing.JButton();
+        jButtonMultar = new javax.swing.JButton();
+        jButtonVerFacturas = new javax.swing.JButton();
+        jButtonVerMultas = new javax.swing.JButton();
+        jButtonVerPropietarios = new javax.swing.JButton();
+        jButtonRegistrarEmpleado = new javax.swing.JButton();
+        jButtonVerEmpleados = new javax.swing.JButton();
+        jButtonRegistrarPropiedad = new javax.swing.JButton();
+        jButtonVerPropiedades = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,39 +51,47 @@ public class IndexAdminstrador extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(197, 168, 128));
 
-        jButton2.setBackground(new java.awt.Color(197, 168, 128));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(44, 44, 44));
-        jButton2.setText("Actulizar Perfil");
+        jButtonActualizar.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonActualizar.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonActualizar.setText("Actulizar Perfil");
 
-        jButton3.setBackground(new java.awt.Color(197, 168, 128));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(44, 44, 44));
-        jButton3.setText("Cerrar Sesion");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSalir.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonSalir.setText("Cerrar Sesion");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonSalirActionPerformed(evt);
             }
         });
+
+        jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonAyuda.setText("Ayuda");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jButton2)
+                .addContainerGap()
+                .addComponent(jButtonAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(47, 47, 47))
+                .addComponent(jButtonActualizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonSalir)
+                .addGap(19, 19, 19))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jButtonActualizar)
+                    .addComponent(jButtonSalir)
+                    .addComponent(jButtonAyuda))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -88,60 +99,70 @@ public class IndexAdminstrador extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(46, 74, 87));
         jLabel1.setText("Administrador");
 
-        jButton1.setBackground(new java.awt.Color(197, 168, 128));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(44, 44, 44));
-        jButton1.setText("Registrar Propietario");
+        jButtonRegistrarPropietario.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonRegistrarPropietario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonRegistrarPropietario.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonRegistrarPropietario.setText("Registrar Propietario");
 
-        jButton4.setBackground(new java.awt.Color(197, 168, 128));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(44, 44, 44));
-        jButton4.setText("Facturar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonFacturar.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonFacturar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonFacturar.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonFacturar.setText("Facturar");
+        jButtonFacturar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButtonFacturarActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(197, 168, 128));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(44, 44, 44));
-        jButton5.setText("Multar");
+        jButtonMultar.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonMultar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonMultar.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonMultar.setText("Multar");
 
-        jButton6.setBackground(new java.awt.Color(197, 168, 128));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(44, 44, 44));
-        jButton6.setText("Ver Facturas");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVerFacturas.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVerFacturas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVerFacturas.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVerFacturas.setText("Ver Facturas");
+        jButtonVerFacturas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jButtonVerFacturasActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(197, 168, 128));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(44, 44, 44));
-        jButton7.setText("Ver Multas");
+        jButtonVerMultas.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVerMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVerMultas.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVerMultas.setText("Ver Multas");
 
-        jButton8.setBackground(new java.awt.Color(197, 168, 128));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(44, 44, 44));
-        jButton8.setText("Ver Propietarios");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVerPropietarios.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVerPropietarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVerPropietarios.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVerPropietarios.setText("Ver Propietarios");
+        jButtonVerPropietarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                jButtonVerPropietariosActionPerformed(evt);
             }
         });
 
-        jButton9.setBackground(new java.awt.Color(197, 168, 128));
-        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(44, 44, 44));
-        jButton9.setText("Registrar Empleado");
+        jButtonRegistrarEmpleado.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonRegistrarEmpleado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonRegistrarEmpleado.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonRegistrarEmpleado.setText("Registrar Empleado");
 
-        jButton10.setBackground(new java.awt.Color(197, 168, 128));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(44, 44, 44));
-        jButton10.setText("Ver Empleados");
+        jButtonVerEmpleados.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVerEmpleados.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVerEmpleados.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVerEmpleados.setText("Ver Empleados");
+
+        jButtonRegistrarPropiedad.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonRegistrarPropiedad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonRegistrarPropiedad.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonRegistrarPropiedad.setText("Registrar Propiedad");
+
+        jButtonVerPropiedades.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVerPropiedades.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVerPropiedades.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVerPropiedades.setText("Ver Propiedades");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -149,79 +170,88 @@ public class IndexAdminstrador extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(265, 265, 265)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(95, 95, 95)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addGap(79, 79, 79)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonVerEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonRegistrarPropietario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonRegistrarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonVerPropietarios, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonRegistrarPropiedad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(95, 95, 95)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButtonVerFacturas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonVerPropiedades, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonMultar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonFacturar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonVerMultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 114, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(181, 181, 181))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonRegistrarPropietario)
+                    .addComponent(jButtonFacturar))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton4))
+                    .addComponent(jButtonRegistrarEmpleado)
+                    .addComponent(jButtonMultar))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton5))
+                    .addComponent(jButtonRegistrarPropiedad)
+                    .addComponent(jButtonVerPropiedades))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(jButton6))
+                    .addComponent(jButtonVerPropietarios)
+                    .addComponent(jButtonVerFacturas))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10)
-                    .addComponent(jButton7))
-                .addContainerGap(75, Short.MAX_VALUE))
+                    .addComponent(jButtonVerEmpleados)
+                    .addComponent(jButtonVerMultas))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonSalirActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButtonFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFacturarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButtonFacturarActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButtonVerFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerFacturasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_jButtonVerFacturasActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void jButtonVerPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropietariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_jButtonVerPropietariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,16 +296,19 @@ public class IndexAdminstrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton jButtonActualizar;
+    private javax.swing.JButton jButtonAyuda;
+    private javax.swing.JButton jButtonFacturar;
+    private javax.swing.JButton jButtonMultar;
+    private javax.swing.JButton jButtonRegistrarEmpleado;
+    private javax.swing.JButton jButtonRegistrarPropiedad;
+    private javax.swing.JButton jButtonRegistrarPropietario;
+    private javax.swing.JButton jButtonSalir;
+    private javax.swing.JButton jButtonVerEmpleados;
+    private javax.swing.JButton jButtonVerFacturas;
+    private javax.swing.JButton jButtonVerMultas;
+    private javax.swing.JButton jButtonVerPropiedades;
+    private javax.swing.JButton jButtonVerPropietarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

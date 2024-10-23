@@ -34,9 +34,9 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextFieldID = new javax.swing.JTextField();
         jPasswordFieldClave = new javax.swing.JPasswordField();
-        jButtonIniciarSesion = new javax.swing.JButton();
+        jButtonIngresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBoxTipoUsuario = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,14 +61,19 @@ public class Login extends javax.swing.JFrame {
 
         jPasswordFieldClave.setBackground(new java.awt.Color(176, 176, 176));
         jPasswordFieldClave.setForeground(new java.awt.Color(44, 44, 44));
-
-        jButtonIniciarSesion.setBackground(new java.awt.Color(46, 74, 87));
-        jButtonIniciarSesion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonIniciarSesion.setForeground(new java.awt.Color(247, 247, 247));
-        jButtonIniciarSesion.setText("Iniciar Sesion");
-        jButtonIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+        jPasswordFieldClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonIniciarSesionActionPerformed(evt);
+                jPasswordFieldClaveActionPerformed(evt);
+            }
+        });
+
+        jButtonIngresar.setBackground(new java.awt.Color(46, 74, 87));
+        jButtonIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonIngresar.setForeground(new java.awt.Color(247, 247, 247));
+        jButtonIngresar.setText("Iniciar Sesion");
+        jButtonIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIngresarActionPerformed(evt);
             }
         });
 
@@ -85,9 +90,9 @@ public class Login extends javax.swing.JFrame {
             .addGap(0, 67, Short.MAX_VALUE)
         );
 
-        jComboBox1.setBackground(new java.awt.Color(176, 176, 176));
-        jComboBox1.setForeground(new java.awt.Color(44, 44, 44));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "PROPIETARIO", "EMPLEADO", "FUTURO COMPRADOR" }));
+        jComboBoxTipoUsuario.setBackground(new java.awt.Color(176, 176, 176));
+        jComboBoxTipoUsuario.setForeground(new java.awt.Color(44, 44, 44));
+        jComboBoxTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "PROPIETARIO", "EMPLEADO", "FUTURO COMPRADOR" }));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(44, 44, 44));
@@ -106,7 +111,7 @@ public class Login extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jComboBoxTipoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,7 +125,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(137, 137, 137)
-                        .addComponent(jButtonIniciarSesion)))
+                        .addComponent(jButtonIngresar)))
                 .addContainerGap(96, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -140,9 +145,9 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxTipoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(jButtonIniciarSesion)
+                .addComponent(jButtonIngresar)
                 .addGap(49, 49, 49))
         );
 
@@ -162,9 +167,13 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
+    private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
+    }//GEN-LAST:event_jButtonIngresarActionPerformed
+
+    private void jPasswordFieldClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldClaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldClaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,8 +211,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonIniciarSesion;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButtonIngresar;
+    private javax.swing.JComboBox<String> jComboBoxTipoUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
