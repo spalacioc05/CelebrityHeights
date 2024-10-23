@@ -55,6 +55,11 @@ public class IndexAdminstrador extends javax.swing.JFrame {
         jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonActualizar.setForeground(new java.awt.Color(44, 44, 44));
         jButtonActualizar.setText("Actulizar Perfil");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
 
         jButtonSalir.setBackground(new java.awt.Color(197, 168, 128));
         jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -95,6 +100,11 @@ public class IndexAdminstrador extends javax.swing.JFrame {
         jButtonRegistrarPropietario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonRegistrarPropietario.setForeground(new java.awt.Color(44, 44, 44));
         jButtonRegistrarPropietario.setText("Registrar Propietario");
+        jButtonRegistrarPropietario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistrarPropietarioActionPerformed(evt);
+            }
+        });
 
         jButtonFacturar.setBackground(new java.awt.Color(197, 168, 128));
         jButtonFacturar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -110,6 +120,11 @@ public class IndexAdminstrador extends javax.swing.JFrame {
         jButtonMultar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonMultar.setForeground(new java.awt.Color(44, 44, 44));
         jButtonMultar.setText("Multar");
+        jButtonMultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMultarActionPerformed(evt);
+            }
+        });
 
         jButtonVerFacturas.setBackground(new java.awt.Color(197, 168, 128));
         jButtonVerFacturas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -125,6 +140,11 @@ public class IndexAdminstrador extends javax.swing.JFrame {
         jButtonVerMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerMultas.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerMultas.setText("Ver Multas");
+        jButtonVerMultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerMultasActionPerformed(evt);
+            }
+        });
 
         jButtonVerPropietarios.setBackground(new java.awt.Color(197, 168, 128));
         jButtonVerPropietarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -140,26 +160,51 @@ public class IndexAdminstrador extends javax.swing.JFrame {
         jButtonRegistrarEmpleado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonRegistrarEmpleado.setForeground(new java.awt.Color(44, 44, 44));
         jButtonRegistrarEmpleado.setText("Registrar Empleado");
+        jButtonRegistrarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistrarEmpleadoActionPerformed(evt);
+            }
+        });
 
         jButtonVerEmpleados.setBackground(new java.awt.Color(197, 168, 128));
         jButtonVerEmpleados.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerEmpleados.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerEmpleados.setText("Ver Empleados");
+        jButtonVerEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerEmpleadosActionPerformed(evt);
+            }
+        });
 
         jButtonRegistrarPropiedad.setBackground(new java.awt.Color(197, 168, 128));
         jButtonRegistrarPropiedad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonRegistrarPropiedad.setForeground(new java.awt.Color(44, 44, 44));
         jButtonRegistrarPropiedad.setText("Registrar Propiedad");
+        jButtonRegistrarPropiedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistrarPropiedadActionPerformed(evt);
+            }
+        });
 
         jButtonVerPropiedades.setBackground(new java.awt.Color(197, 168, 128));
         jButtonVerPropiedades.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerPropiedades.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerPropiedades.setText("Ver Propiedades");
+        jButtonVerPropiedades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerPropiedadesActionPerformed(evt);
+            }
+        });
 
         jButtonVerAyudas.setBackground(new java.awt.Color(197, 168, 128));
         jButtonVerAyudas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerAyudas.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerAyudas.setText("Ver Ayudas");
+        jButtonVerAyudas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerAyudasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -243,7 +288,8 @@ public class IndexAdminstrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFacturarActionPerformed
-        // TODO add your handling code here:
+        Facturar facturar = new Facturar();
+        facturar.setVisible(true);
     }//GEN-LAST:event_jButtonFacturarActionPerformed
 
     private void jButtonVerFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerFacturasActionPerformed
@@ -253,6 +299,47 @@ public class IndexAdminstrador extends javax.swing.JFrame {
     private void jButtonVerPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropietariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonVerPropietariosActionPerformed
+
+    private void jButtonRegistrarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarPropietarioActionPerformed
+        RegistrarPropietario registrarPropietario = new RegistrarPropietario();
+        registrarPropietario.setVisible(true);
+    }//GEN-LAST:event_jButtonRegistrarPropietarioActionPerformed
+
+    private void jButtonRegistrarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarEmpleadoActionPerformed
+        RegistrarEmpleado registrarEmpleado = new RegistrarEmpleado();
+        registrarEmpleado.setVisible(true);
+    }//GEN-LAST:event_jButtonRegistrarEmpleadoActionPerformed
+
+    private void jButtonRegistrarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarPropiedadActionPerformed
+        RegistrarPropiedad registrarPropiedad = new RegistrarPropiedad();
+        registrarPropiedad.setVisible(true);
+    }//GEN-LAST:event_jButtonRegistrarPropiedadActionPerformed
+
+    private void jButtonMultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultarActionPerformed
+        Multar multar = new Multar();
+        multar.setVisible(true);
+    }//GEN-LAST:event_jButtonMultarActionPerformed
+
+    private void jButtonVerEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerEmpleadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerEmpleadosActionPerformed
+
+    private void jButtonVerPropiedadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropiedadesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerPropiedadesActionPerformed
+
+    private void jButtonVerMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerMultasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerMultasActionPerformed
+
+    private void jButtonVerAyudasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerAyudasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerAyudasActionPerformed
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        ActualizarEmpleado actualizarEmpleado = new ActualizarEmpleado();
+        actualizarEmpleado.setVisible(true);
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     /**
      * @param args the command line arguments

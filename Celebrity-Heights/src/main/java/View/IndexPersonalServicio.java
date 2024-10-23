@@ -57,11 +57,21 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(44, 44, 44));
         jButtonSalir.setText("Cerrar Sesion");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
 
         jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
         jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
         jButtonAyuda.setText("Ayuda");
+        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAyudaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -95,11 +105,21 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         jButtonVerSolicitudes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerSolicitudes.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerSolicitudes.setText("Ver Solicitudes");
+        jButtonVerSolicitudes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerSolicitudesActionPerformed(evt);
+            }
+        });
 
         jButtonHorarios.setBackground(new java.awt.Color(197, 168, 128));
         jButtonHorarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonHorarios.setForeground(new java.awt.Color(44, 44, 44));
         jButtonHorarios.setText("Horario de Zonas Comunes");
+        jButtonHorarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHorariosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,8 +168,26 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        // TODO add your handling code here:
+        ActualizarEmpleado actualizarEmpleado = new ActualizarEmpleado();
+        actualizarEmpleado.setVisible(true);
     }//GEN-LAST:event_jButtonActualizarActionPerformed
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButtonVerSolicitudesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerSolicitudesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerSolicitudesActionPerformed
+
+    private void jButtonHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHorariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonHorariosActionPerformed
+
+    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
+        Ayuda ayuda = new Ayuda();
+        ayuda.setVisible(true);
+    }//GEN-LAST:event_jButtonAyudaActionPerformed
 
     /**
      * @param args the command line arguments

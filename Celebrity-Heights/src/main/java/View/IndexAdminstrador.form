@@ -165,6 +165,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Actulizar Perfil"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonActualizarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonSalir">
               <Properties>
@@ -209,6 +212,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Registrar Propietario"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegistrarPropietarioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonFacturar">
           <Properties>
@@ -240,6 +246,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Multar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMultarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonVerFacturas">
           <Properties>
@@ -271,6 +280,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ver Multas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVerMultasActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonVerPropietarios">
           <Properties>
@@ -302,6 +314,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Registrar Empleado"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegistrarEmpleadoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonVerEmpleados">
           <Properties>
@@ -316,6 +331,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ver Empleados"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVerEmpleadosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonRegistrarPropiedad">
           <Properties>
@@ -330,6 +348,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Registrar Propiedad"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegistrarPropiedadActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonVerPropiedades">
           <Properties>
@@ -344,6 +365,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ver Propiedades"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVerPropiedadesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonVerAyudas">
           <Properties>
@@ -358,6 +382,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ver Ayudas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVerAyudasActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -137,6 +137,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Actulizar Perfil"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonActualizarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonSalir">
               <Properties>
@@ -151,6 +154,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSalirActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonAyuda">
               <Properties>
@@ -165,6 +171,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ayuda"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAyudaActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -192,6 +201,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Registrar Visita"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegistrarVisitaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonEnviarIndicacion">
           <Properties>
@@ -206,6 +218,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Enviar Indicacion"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEnviarIndicacionActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonVerVisitantes">
           <Properties>
@@ -220,6 +235,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ver Visitantes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVerVisitantesActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

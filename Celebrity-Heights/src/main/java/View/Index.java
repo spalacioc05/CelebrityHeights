@@ -42,11 +42,21 @@ public class Index extends javax.swing.JFrame {
         jButtonIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonIngresar.setForeground(new java.awt.Color(44, 44, 44));
         jButtonIngresar.setText("Ingresar");
+        jButtonIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIngresarActionPerformed(evt);
+            }
+        });
 
         jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
         jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
         jButtonAyuda.setText("Ayuda");
+        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAyudaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -105,6 +115,16 @@ public class Index extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_jButtonIngresarActionPerformed
+
+    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
+        Ayuda ayuda = new Ayuda();
+        ayuda.setVisible(true);
+    }//GEN-LAST:event_jButtonAyudaActionPerformed
 
     /**
      * @param args the command line arguments

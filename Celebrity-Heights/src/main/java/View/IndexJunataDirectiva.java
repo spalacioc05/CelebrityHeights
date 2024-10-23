@@ -49,16 +49,31 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonActualizar.setForeground(new java.awt.Color(44, 44, 44));
         jButtonActualizar.setText("Actulizar Perfil");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
 
         jButtonSalir.setBackground(new java.awt.Color(197, 168, 128));
         jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(44, 44, 44));
         jButtonSalir.setText("Cerrar Sesion");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
 
         jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
         jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
         jButtonAyuda.setText("Ayuda");
+        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAyudaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -92,21 +107,41 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         jButtonVerMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerMultas.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerMultas.setText("Ver Multas");
+        jButtonVerMultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerMultasActionPerformed(evt);
+            }
+        });
 
         jButtonEditarMultas.setBackground(new java.awt.Color(197, 168, 128));
         jButtonEditarMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonEditarMultas.setForeground(new java.awt.Color(44, 44, 44));
         jButtonEditarMultas.setText("Editar Multas");
+        jButtonEditarMultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarMultasActionPerformed(evt);
+            }
+        });
 
         jButtonVerPropietarios.setBackground(new java.awt.Color(197, 168, 128));
         jButtonVerPropietarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerPropietarios.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerPropietarios.setText("Ver Propietarios");
+        jButtonVerPropietarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerPropietariosActionPerformed(evt);
+            }
+        });
 
         jButtonVerPropiedades.setBackground(new java.awt.Color(197, 168, 128));
         jButtonVerPropiedades.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerPropiedades.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerPropiedades.setText("Ver Propiedades");
+        jButtonVerPropiedades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerPropiedadesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,11 +151,11 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonEditarMultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonVerMultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(52, 52, 52)
+                        .addGap(144, 144, 144)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonEditarMultas)
+                            .addComponent(jButtonVerMultas, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonVerPropietarios)
                             .addComponent(jButtonVerPropiedades)))
@@ -137,12 +172,12 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonVerMultas)
-                    .addComponent(jButtonVerPropietarios))
+                    .addComponent(jButtonVerPropietarios)
+                    .addComponent(jButtonEditarMultas))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonEditarMultas)
-                    .addComponent(jButtonVerPropiedades))
+                    .addComponent(jButtonVerPropiedades)
+                    .addComponent(jButtonVerMultas))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -163,6 +198,37 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        ActualizarEmpleado actualizarEmpleado = new ActualizarEmpleado();
+        actualizarEmpleado.setVisible(true);
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButtonEditarMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarMultasActionPerformed
+        Multar multar = new Multar();
+        multar.setVisible(true);
+    }//GEN-LAST:event_jButtonEditarMultasActionPerformed
+
+    private void jButtonVerMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerMultasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerMultasActionPerformed
+
+    private void jButtonVerPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropietariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerPropietariosActionPerformed
+
+    private void jButtonVerPropiedadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropiedadesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerPropiedadesActionPerformed
+
+    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
+        Ayuda ayuda = new Ayuda();
+        ayuda.setVisible(true);
+    }//GEN-LAST:event_jButtonAyudaActionPerformed
 
     /**
      * @param args the command line arguments

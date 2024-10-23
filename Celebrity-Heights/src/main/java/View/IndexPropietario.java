@@ -50,16 +50,31 @@ public class IndexPropietario extends javax.swing.JFrame {
         jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonActualizar.setForeground(new java.awt.Color(44, 44, 44));
         jButtonActualizar.setText("Actulizar Perfil");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
 
         jButtonSalir.setBackground(new java.awt.Color(197, 168, 128));
         jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(44, 44, 44));
         jButtonSalir.setText("Cerrar Sesion");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
 
         jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
         jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
         jButtonAyuda.setText("Ayuda");
+        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAyudaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -93,26 +108,51 @@ public class IndexPropietario extends javax.swing.JFrame {
         jButtonPropiedades.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonPropiedades.setForeground(new java.awt.Color(44, 44, 44));
         jButtonPropiedades.setText("Propiedades");
+        jButtonPropiedades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPropiedadesActionPerformed(evt);
+            }
+        });
 
         jButtonFacturas.setBackground(new java.awt.Color(197, 168, 128));
         jButtonFacturas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonFacturas.setForeground(new java.awt.Color(44, 44, 44));
         jButtonFacturas.setText("Facturas");
+        jButtonFacturas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFacturasActionPerformed(evt);
+            }
+        });
 
         jButtonMultas.setBackground(new java.awt.Color(197, 168, 128));
         jButtonMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonMultas.setForeground(new java.awt.Color(44, 44, 44));
         jButtonMultas.setText("Multas");
+        jButtonMultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMultasActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(197, 168, 128));
         jButton6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(44, 44, 44));
         jButton6.setText("Ver Visitas");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButtonHorarios.setBackground(new java.awt.Color(197, 168, 128));
         jButtonHorarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonHorarios.setForeground(new java.awt.Color(44, 44, 44));
         jButtonHorarios.setText("Horario de Zonas Comunes");
+        jButtonHorarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHorariosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -170,6 +210,40 @@ public class IndexPropietario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        ActualizarPropietario actualizarPropietario = new ActualizarPropietario();
+        actualizarPropietario.setVisible(true);
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButtonPropiedadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPropiedadesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonPropiedadesActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButtonFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFacturasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonFacturasActionPerformed
+
+    private void jButtonMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonMultasActionPerformed
+
+    private void jButtonHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHorariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonHorariosActionPerformed
+
+    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
+        Ayuda ayuda = new Ayuda();
+        ayuda.setVisible(true);
+    }//GEN-LAST:event_jButtonAyudaActionPerformed
 
     /**
      * @param args the command line arguments

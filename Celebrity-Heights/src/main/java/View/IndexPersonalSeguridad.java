@@ -48,16 +48,31 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
         jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonActualizar.setForeground(new java.awt.Color(44, 44, 44));
         jButtonActualizar.setText("Actulizar Perfil");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
 
         jButtonSalir.setBackground(new java.awt.Color(197, 168, 128));
         jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(44, 44, 44));
         jButtonSalir.setText("Cerrar Sesion");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
 
         jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
         jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
         jButtonAyuda.setText("Ayuda");
+        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAyudaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -91,16 +106,31 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
         jButtonRegistrarVisita.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonRegistrarVisita.setForeground(new java.awt.Color(44, 44, 44));
         jButtonRegistrarVisita.setText("Registrar Visita");
+        jButtonRegistrarVisita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistrarVisitaActionPerformed(evt);
+            }
+        });
 
         jButtonEnviarIndicacion.setBackground(new java.awt.Color(197, 168, 128));
         jButtonEnviarIndicacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonEnviarIndicacion.setForeground(new java.awt.Color(44, 44, 44));
         jButtonEnviarIndicacion.setText("Enviar Indicacion");
+        jButtonEnviarIndicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEnviarIndicacionActionPerformed(evt);
+            }
+        });
 
         jButtonVerVisitantes.setBackground(new java.awt.Color(197, 168, 128));
         jButtonVerVisitantes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerVisitantes.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerVisitantes.setText("Ver Visitantes");
+        jButtonVerVisitantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerVisitantesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,6 +182,34 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        ActualizarEmpleado actualizarEmpleado = new ActualizarEmpleado();
+        actualizarEmpleado.setVisible(true);
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButtonRegistrarVisitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarVisitaActionPerformed
+        RegistrarVisita registrarVisita = new RegistrarVisita();
+        registrarVisita.setVisible(true);
+    }//GEN-LAST:event_jButtonRegistrarVisitaActionPerformed
+
+    private void jButtonEnviarIndicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarIndicacionActionPerformed
+        EnviarIndicacion enviarIndicacion = new EnviarIndicacion();
+        enviarIndicacion.setVisible(true);
+    }//GEN-LAST:event_jButtonEnviarIndicacionActionPerformed
+
+    private void jButtonVerVisitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerVisitantesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerVisitantesActionPerformed
+
+    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
+        Ayuda ayuda = new Ayuda();
+        ayuda.setVisible(true);
+    }//GEN-LAST:event_jButtonAyudaActionPerformed
 
     /**
      * @param args the command line arguments
