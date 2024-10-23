@@ -23,18 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -51,28 +45,38 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jButtonVerEmpleados" max="32767" attributes="0"/>
-                      <Component id="jButtonRegistrarPropietario" max="32767" attributes="0"/>
-                      <Component id="jButtonRegistrarEmpleado" max="32767" attributes="0"/>
-                      <Component id="jButtonVerPropietarios" min="-2" pref="164" max="-2" attributes="0"/>
-                      <Component id="jButtonRegistrarPropiedad" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jButtonRegistrarPropietario" max="32767" attributes="0"/>
+                              <Component id="jButtonRegistrarEmpleado" max="32767" attributes="0"/>
+                              <Component id="jButtonRegistrarPropiedad" max="32767" attributes="0"/>
+                              <Component id="jButtonFacturar" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButtonMultar" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jButtonVerFacturas" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                              <Component id="jButtonVerMultas" min="-2" pref="138" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jButtonVerEmpleados" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButtonVerPropiedades" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jButtonVerPropietarios" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="217" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jButtonVerFacturas" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButtonVerPropiedades" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButtonMultar" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButtonFacturar" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButtonVerMultas" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="114" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="94" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="217" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
+                  <Component id="jButtonVerAyudas" min="-2" pref="138" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -80,17 +84,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="75" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="75" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonRegistrarPropietario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButtonFacturar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonVerPropietarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonRegistrarEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButtonMultar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonVerEmpleados" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -99,15 +103,17 @@
                   </Group>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonVerPropietarios" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonVerFacturas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonFacturar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonVerEmpleados" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonVerMultas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonMultar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="72" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jButtonVerAyudas" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="68" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -124,8 +130,6 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButtonAyuda" min="-2" pref="111" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jButtonActualizar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -141,7 +145,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButtonActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonSalir" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonAyuda" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="27" max="32767" attributes="0"/>
                   </Group>
@@ -179,20 +182,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSalirActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButtonAyuda">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="80" green="a8" red="c5" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="2c" green="2c" red="2c" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Ayuda"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -354,6 +343,20 @@
               <Color blue="2c" green="2c" red="2c" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ver Propiedades"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonVerAyudas">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="80" green="a8" red="c5" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="2c" green="2c" red="2c" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ver Ayudas"/>
           </Properties>
         </Component>
       </SubComponents>

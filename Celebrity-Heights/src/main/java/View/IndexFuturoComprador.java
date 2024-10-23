@@ -88,7 +88,7 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
-        jLabel2.setText(" Saber la profecion u ocupacion de mis futuros vecionos");
+        jLabel2.setText(" Saber la profecion u ocupacion de mis futuros vecinos");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(44, 44, 44));
@@ -132,7 +132,7 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(62, 62, 62)
                             .addComponent(jLabel2))))
-                .addGap(0, 70, Short.MAX_VALUE))
+                .addGap(0, 82, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButtonVerHorarios)

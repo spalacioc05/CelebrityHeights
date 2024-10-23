@@ -76,7 +76,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="82" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -206,7 +206,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="2c" green="2c" red="2c" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value=" Saber la profecion u ocupacion de mis futuros vecionos"/>
+            <Property name="text" type="java.lang.String" value=" Saber la profecion u ocupacion de mis futuros vecinos"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
