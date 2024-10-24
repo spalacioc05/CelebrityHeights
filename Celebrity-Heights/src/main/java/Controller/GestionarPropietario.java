@@ -8,7 +8,10 @@ import Model.Propiedad;
 import Model.Propietario;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  *
@@ -119,5 +122,46 @@ public class GestionarPropietario implements Gentionar {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public Map<String, String> obtenerProfesionOcupacionVecinos(String idPropiedad) {
+        Map<String, String> resultado = new HashMap<>();
+        try {
+            int idPropiedadInt = Integer.parseInt(idPropiedad);
+            String idPropiedadMenosUno = String.valueOf(idPropiedadInt - 1);
+            String idPropiedadMasUno = String.valueOf(idPropiedadInt + 1);
+
+            List<Propietario> propietarios = mapper.readValue(new File(FILE_PATH), mapper.getTypeFactory().constructCollectionType(List.class, Propietario.class));
+
+            Optional<Propietario> propietarioMenosUno = propietarios.stream()
+                .filter(prop -> prop.getPropiedades() != null)
+                .flatMap(prop -> prop.getPropiedades().stream())
+                .filter(prop -> prop.getIdPropiedad().equals(idPropiedadMenosUno))
+                .map(prop -> propietarios.stream().filter(p -> p.getPropiedades().contains(prop)).findFirst().orElse(null))
+                .findFirst();
+
+            Optional<Propietario> propietarioMasUno = propietarios.stream()
+                .filter(prop -> prop.getPropiedades() != null)
+                .flatMap(prop -> prop.getPropiedades().stream())
+                .filter(prop -> prop.getIdPropiedad().equals(idPropiedadMasUno))
+                .map(prop -> propietarios.stream().filter(p -> p.getPropiedades().contains(prop)).findFirst().orElse(null))
+                .findFirst();
+
+            propietarioMenosUno.ifPresent(prop -> {
+                resultado.put("idPropiedadMenosUno", idPropiedadMenosUno);
+                resultado.put("profesionMenosUno", prop.getProfesion());
+                resultado.put("ocupacionMenosUno", prop.getOcupacion());
+            });
+
+            propietarioMasUno.ifPresent(prop -> {
+                resultado.put("idPropiedadMasUno", idPropiedadMasUno);
+                resultado.put("profesionMasUno", prop.getProfesion());
+                resultado.put("ocupacionMasUno", prop.getOcupacion());
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resultado;
     }
 }

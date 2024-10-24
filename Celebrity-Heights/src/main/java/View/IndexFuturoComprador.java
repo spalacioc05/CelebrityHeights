@@ -5,7 +5,12 @@
 package View;
 
 import Model.Listar;
+
+import java.util.Map;
+
 import javax.swing.JOptionPane;
+
+import Controller.GestionarPropietario;
 
 /**
  *
@@ -78,6 +83,11 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
         jButtonVerProfecion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerProfecion.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerProfecion.setText("Ir a ver");
+        jButtonVerProfecion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerProfecionActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
@@ -182,6 +192,31 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonVerHorariosActionPerformed
+
+    private void jButtonVerProfecionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerProfecionActionPerformed
+        String idPropiedad = jTextFieldIDFactura.getText().trim();
+        if (idPropiedad.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese el ID de la propiedad.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+    
+        GestionarPropietario gestionarPropietario = new GestionarPropietario();
+        Map<String, String> info = gestionarPropietario.obtenerProfesionOcupacionVecinos(idPropiedad);
+    
+        if (info.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No se encontraron vecinos para la propiedad ingresada.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+    
+        Listar listar = new Listar();
+        boolean exito = listar.crearPDFProfesionOcupacionVecinos(info);
+    
+        if (exito) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButtonVerProfecionActionPerformed
 
     /**
      * @param args the command line arguments

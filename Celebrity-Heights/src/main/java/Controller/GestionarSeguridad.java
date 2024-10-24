@@ -5,6 +5,7 @@
 package Controller;
 
 import Model.Visitante;
+import Model.Indicacion;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -17,9 +18,9 @@ import java.util.ArrayList;
  * @author spala
  */
 
-
 public class GestionarSeguridad {
-    private static final String FILE_PATH = "data/seguridad.csv";
+    private static final String FILE_PATH_VISITANTES = "data/seguridad.csv";
+    private static final String FILE_PATH_INDICACIONES = "data/servicio.csv";
     private GestionarPropiedad gestionarPropiedad = new GestionarPropiedad();
 
     public boolean registrarVisita(Visitante visitante) {
@@ -41,7 +42,7 @@ public class GestionarSeguridad {
 
     private List<Visitante> leerVisitantes() {
         List<Visitante> visitantes = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH_VISITANTES))) {
             String line;
             br.readLine(); // Skip header
             while ((line = br.readLine()) != null) {
@@ -63,7 +64,7 @@ public class GestionarSeguridad {
     }
 
     private void escribirVisitantes(List<Visitante> visitantes) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH_VISITANTES))) {
             bw.write("idVisitante,nombreVisitante,idPropiedad,fechaEntrada,horaEntrada,motivo\n");
             for (Visitante visitante : visitantes) {
                 bw.write(String.format("%s,%s,%s,%s,%s,%s\n",
@@ -73,6 +74,55 @@ public class GestionarSeguridad {
                         visitante.getFechaEntrada(),
                         visitante.getHoraEntrada(),
                         visitante.getMotivo()
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean enviarIndicacion(Indicacion indicacion) {
+        try {
+            List<Indicacion> indicaciones = leerIndicaciones();
+            int nuevoId = indicaciones.isEmpty() ? 1 : indicaciones.get(indicaciones.size() - 1).getIdIndicacion() + 1;
+            indicacion.setIdIndicacion(nuevoId);
+            indicaciones.add(indicacion);
+            escribirIndicaciones(indicaciones);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    private List<Indicacion> leerIndicaciones() {
+        List<Indicacion> indicaciones = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH_INDICACIONES))) {
+            String line;
+            br.readLine(); // Skip header
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                Indicacion indicacion = new Indicacion(
+                        Integer.parseInt(values[0]),
+                        values[1],
+                        Boolean.parseBoolean(values[2])
+                );
+                indicaciones.add(indicacion);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return indicaciones;
+    }
+
+    private void escribirIndicaciones(List<Indicacion> indicaciones) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH_INDICACIONES))) {
+            bw.write("idIndicacion,indicacion,estado\n");
+            for (Indicacion indicacion : indicaciones) {
+                bw.write(String.format("%d,%s,%b\n",
+                        indicacion.getIdIndicacion(),
+                        indicacion.getIndicacion(),
+                        indicacion.isEstado()
                 ));
             }
         } catch (Exception e) {

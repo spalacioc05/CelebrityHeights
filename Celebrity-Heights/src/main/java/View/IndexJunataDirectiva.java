@@ -204,13 +204,13 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSolicitudMultaActionPerformed
 
     private void jButtonMultasPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultasPendientesActionPerformed
-//        Listar listar = new Listar();
-//        boolean suseso = listar.ListarMultasPendientesPDF();
-//        if (suseso) {
-//            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-//        } else {
-//            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
-//        }
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarMultasPendientesPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonMultasPendientesActionPerformed
 
     private void jButtonVerPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropietariosActionPerformed

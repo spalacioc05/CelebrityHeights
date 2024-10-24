@@ -38,6 +38,7 @@ public class Listar {
     protected static final String PROPIETARIOS_PROPIEDADES = "data/propietariosPropiedades.json";
     protected static final String FACTURAS = "data/facturas.csv";
     protected static final String MULTAS = "data/multas.json";
+    protected static final String MULTAS_PENDIENTES = "data/multasPendientes.json";
     protected static final String SEGURIDAD = "data/seguridad.csv";
     protected static final String HORARIO_ZONAS_COMUNES = "data/horarioZonasComunes.csv";
     protected static final String SERVICIO = "data/servicio.csv";
@@ -594,5 +595,109 @@ public class Listar {
         }
     }
 
+    public boolean ListarMultasPendientesPDF() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            // Leer el archivo JSON y mapearlo a una lista de objetos Multa
+            List<Multa> multas = objectMapper.readValue(new File(MULTAS_PENDIENTES), objectMapper.getTypeFactory().constructCollectionType(List.class, Multa.class));
+    
+            // Crear un documento PDF
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream("archivosPDF/ListarMultasPendientes.pdf"));
+            document.open();
+    
+            // Crear un título en negrita
+            Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16);
+            Paragraph title = new Paragraph("Lista de Multas Pendientes", titleFont);
+            title.setAlignment(Element.ALIGN_CENTER);
+            document.add(title);
+    
+            // Agregar un espacio entre el título y la tabla
+            document.add(new Paragraph(" "));
+    
+            // Crear una tabla con las columnas necesarias
+            PdfPTable table = new PdfPTable(11); // 11 columnas
+            table.setWidthPercentage(100);
+    
+            // Agregar encabezados de columna en negrita
+            Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 8);
+            String[] headers = {"ID Multa", "ID Propiedad", "ID Propietario", "Fecha Expedicion", "Fecha Vencimiento", "Fecha Pago", "Motivo", "Monto", "IVA", "Monto Total", "Pagado"};
+            for (String header : headers) {
+                PdfPCell cell = new PdfPCell();
+                cell.setPhrase(new Phrase(header, headerFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+            }
+    
+            // Agregar datos de las multas con tamaño de fuente 8
+            Font dataFont = FontFactory.getFont(FontFactory.HELVETICA, 8);
+            for (Multa multa : multas) {
+                table.addCell(new Phrase(multa.getIdMulta(), dataFont));
+                table.addCell(new Phrase(multa.getIdPropiedad(), dataFont));
+                table.addCell(new Phrase(multa.getIdPropietario(), dataFont));
+                table.addCell(new Phrase(multa.getFechaExpedicion(), dataFont));
+                table.addCell(new Phrase(multa.getFechaVencimiento(), dataFont));
+                table.addCell(new Phrase(multa.getFechaPago(), dataFont));
+                table.addCell(new Phrase(multa.getMotivo(), dataFont));
+                table.addCell(new Phrase(String.valueOf(multa.getMonto()), dataFont));
+                table.addCell(new Phrase(String.valueOf(multa.getIva()), dataFont));
+                table.addCell(new Phrase(String.valueOf(multa.getMontoTotal()), dataFont));
+                table.addCell(new Phrase(String.valueOf(multa.isPagado()), dataFont));
+            }
+    
+            // Agregar la tabla al documento
+            document.add(table);
+            document.close();
+    
+            // Abrir el PDF generado
+            File pdfFile = new File("archivosPDF/ListarMultasPendientes.pdf");
+            if (pdfFile.exists()) {
+                Desktop.getDesktop().open(pdfFile);
+            }
+    
+            return true; // Proceso exitoso
+    
+        } catch (IOException | DocumentException e) {
+            e.printStackTrace();
+            return false; // Ocurrió un error
+        }
+    }
+
+    public boolean crearPDFProfesionOcupacionVecinos(Map<String, String> info) {
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream("archivosPDF/ProfesionOcupacionVecinos.pdf"));
+            document.open();
+
+            Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16);
+            Font dataFont = FontFactory.getFont(FontFactory.HELVETICA, 12);
+
+            if (info.containsKey("idPropiedadMenosUno")) {
+                document.add(new Paragraph("ID Propiedad -1: " + info.get("idPropiedadMenosUno"), titleFont));
+                document.add(new Paragraph("Profesion: " + info.get("profesionMenosUno"), dataFont));
+                document.add(new Paragraph("Ocupacion: " + info.get("ocupacionMenosUno"), dataFont));
+                document.add(new Paragraph(" "));
+            }
+
+            if (info.containsKey("idPropiedadMasUno")) {
+                document.add(new Paragraph("ID Propiedad +1: " + info.get("idPropiedadMasUno"), titleFont));
+                document.add(new Paragraph("Profesion: " + info.get("profesionMasUno"), dataFont));
+                document.add(new Paragraph("Ocupacion: " + info.get("ocupacionMasUno"), dataFont));
+                document.add(new Paragraph(" "));
+            }
+
+            document.close();
+
+            File pdfFile = new File("archivosPDF/ProfesionOcupacionVecinos.pdf");
+            if (pdfFile.exists()) {
+                Desktop.getDesktop().open(pdfFile);
+            }
+
+            return true;
+        } catch (IOException | DocumentException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 }
