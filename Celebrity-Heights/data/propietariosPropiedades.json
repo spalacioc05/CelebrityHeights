@@ -49,7 +49,6 @@
         "sizeM2": 200,
         "habitaciones": 4,
         "bathrooms": 3,
-        "tipoPropiedad": "casa",
         "precioM2": 15000,
         "fechaAdquisicion": "15/02/2020",
         "valorAdministracion": 350000

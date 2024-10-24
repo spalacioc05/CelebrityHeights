@@ -4,6 +4,9 @@
  */
 package View;
 
+import Model.Listar;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author spala
@@ -32,10 +35,10 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButtonActualizar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
-        jButtonAyuda = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonVerSolicitudes = new javax.swing.JButton();
         jButtonHorarios = new javax.swing.JButton();
+        jButtonEditarSolicitud = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,24 +66,12 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
             }
         });
 
-        jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonAyuda.setText("Ayuda");
-        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAyudaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jButtonAyuda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(321, Short.MAX_VALUE)
                 .addComponent(jButtonActualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonSalir)
@@ -92,8 +83,7 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonActualizar)
-                    .addComponent(jButtonSalir)
-                    .addComponent(jButtonAyuda))
+                    .addComponent(jButtonSalir))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -121,23 +111,35 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
             }
         });
 
+        jButtonEditarSolicitud.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonEditarSolicitud.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonEditarSolicitud.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonEditarSolicitud.setText("Editar Solicitud");
+        jButtonEditarSolicitud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarSolicitudActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 127, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jButtonVerSolicitudes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonEditarSolicitud))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 127, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(121, 121, 121))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(jButtonVerSolicitudes))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jButtonHorarios)))
+                .addGap(179, 179, 179)
+                .addComponent(jButtonHorarios)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -147,10 +149,12 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonVerSolicitudes)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonVerSolicitudes)
+                    .addComponent(jButtonEditarSolicitud))
+                .addGap(29, 29, 29)
                 .addComponent(jButtonHorarios)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,17 +181,28 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonVerSolicitudesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerSolicitudesActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarIndicacionesPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerSolicitudesActionPerformed
 
     private void jButtonHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHorariosActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarHorarioZonasComunesPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonHorariosActionPerformed
 
-    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
-        Ayuda ayuda = new Ayuda();
-        ayuda.setVisible(true);
-    }//GEN-LAST:event_jButtonAyudaActionPerformed
+    private void jButtonEditarSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarSolicitudActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEditarSolicitudActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,14 +249,14 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IndexPropietario().setVisible(true);
+                new IndexPersonalServicio().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonAyuda;
+    private javax.swing.JButton jButtonEditarSolicitud;
     private javax.swing.JButton jButtonHorarios;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonVerSolicitudes;

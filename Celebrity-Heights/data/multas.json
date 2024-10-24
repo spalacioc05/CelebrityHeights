@@ -1,69 +1,80 @@
 [
-    {
-      "idMulta": "98701",
-      "idPropiedad": "401",
-      "idPropietario": "5555",
-      "fechaExpedicion": "15/10/2024",
-      "fechaVencimiento": "15/11/2024",
-      "fechaPago": "16/10/2024",
-      "motivo": "Exceso de ruido",
-      "monto": 250000,
-      "pagado": true
-    },
-    {
-      "idMulta": "54321",
-      "idPropiedad": "802",
-      "idPropietario": "5555",
-      "fechaExpedicion": "18/10/2024",
-      "fechaVencimiento": "18/11/2024",
-      "fechaPago": null,
-      "motivo": "Estacionamiento indebido",
-      "monto": 150000,
-      "pagado": false
-    },
-    {
-      "idMulta": "87654",
-      "idPropiedad": "701",
-      "idPropietario": "6666",
-      "fechaExpedicion": "20/10/2024",
-      "fechaVencimiento": "20/11/2024",
-      "fechaPago": "21/10/2024",
-      "motivo": "Falta de mantenimiento",
-      "monto": 300000,
-      "pagado": true
-    },
-    {
-      "idMulta": "23456",
-      "idPropiedad": "401",
-      "idPropietario": "5555",
-      "fechaExpedicion": "21/10/2024",
-      "fechaVencimiento": "21/11/2024",
-      "fechaPago": null,
-      "motivo": "Incumplimiento de normas",
-      "monto": 200000,
-      "pagado": false
-    },
-    {
-      "idMulta": "13579",
-      "idPropiedad": "802",
-      "idPropietario": "5555",
-      "fechaExpedicion": "22/10/2024",
-      "fechaVencimiento": "22/11/2024",
-      "fechaPago": "23/10/2024",
-      "motivo": "Desperdicio de agua",
-      "monto": 100000,
-      "pagado": true
-    },
-    {
-      "idMulta": "24680",
-      "idPropiedad": "701",
-      "idPropietario": "6666",
-      "fechaExpedicion": "23/10/2024",
-      "fechaVencimiento": "23/11/2024",
-      "fechaPago": null,
-      "motivo": "Falta de jardinería",
-      "monto": 180000,
-      "pagado": false
-    }
-  ]
-  
+  {
+    "idMulta": "98701",
+    "idPropiedad": "401",
+    "idPropietario": "5555",
+    "fechaExpedicion": "15/10/2024",
+    "fechaVencimiento": "15/11/2024",
+    "fechaPago": "16/10/2024",
+    "motivo": "Exceso de ruido",
+    "monto": 250000,
+    "iva": 47500,
+    "montoTotal": 297500,
+    "pagado": true
+  },
+  {
+    "idMulta": "54321",
+    "idPropiedad": "802",
+    "idPropietario": "5555",
+    "fechaExpedicion": "18/10/2024",
+    "fechaVencimiento": "18/11/2024",
+    "fechaPago": null,
+    "motivo": "Estacionamiento indebido",
+    "monto": 150000,
+    "iva": 28500,
+    "montoTotal": 178500,
+    "pagado": false
+  },
+  {
+    "idMulta": "87654",
+    "idPropiedad": "701",
+    "idPropietario": "6666",
+    "fechaExpedicion": "20/10/2024",
+    "fechaVencimiento": "20/11/2024",
+    "fechaPago": "21/10/2024",
+    "motivo": "Falta de mantenimiento",
+    "monto": 300000,
+    "iva": 57000,
+    "montoTotal": 357000,
+    "pagado": true
+  },
+  {
+    "idMulta": "23456",
+    "idPropiedad": "401",
+    "idPropietario": "5555",
+    "fechaExpedicion": "21/10/2024",
+    "fechaVencimiento": "21/11/2024",
+    "fechaPago": null,
+    "motivo": "Incumplimiento de normas",
+    "monto": 200000,
+    "iva": 38000,
+    "montoTotal": 238000,
+    "pagado": false
+  },
+  {
+    "idMulta": "13579",
+    "idPropiedad": "802",
+    "idPropietario": "5555",
+    "fechaExpedicion": "22/10/2024",
+    "fechaVencimiento": "22/11/2024",
+    "fechaPago": "23/10/2024",
+    "motivo": "Desperdicio de agua",
+    "monto": 100000,
+    "iva": 19000,
+    "montoTotal": 119000,
+    "pagado": true
+  },
+  {
+    "idMulta": "24680",
+    "idPropiedad": "701",
+    "idPropietario": "6666",
+    "fechaExpedicion": "23/10/2024",
+    "fechaVencimiento": "23/11/2024",
+    "fechaPago": null,
+    "motivo": "Falta de jardinería",
+    "monto": 180000,
+    "iva": 34200,
+    "montoTotal": 214200,
+    "pagado": false
+  }
+]

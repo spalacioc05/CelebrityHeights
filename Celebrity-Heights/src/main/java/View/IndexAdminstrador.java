@@ -4,6 +4,10 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
+import Model.Listar;
+
 /**
  *
  * @author spala
@@ -43,7 +47,6 @@ public class IndexAdminstrador extends javax.swing.JFrame {
         jButtonVerEmpleados = new javax.swing.JButton();
         jButtonRegistrarPropiedad = new javax.swing.JButton();
         jButtonVerPropiedades = new javax.swing.JButton();
-        jButtonVerAyudas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,16 +199,6 @@ public class IndexAdminstrador extends javax.swing.JFrame {
             }
         });
 
-        jButtonVerAyudas.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonVerAyudas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonVerAyudas.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonVerAyudas.setText("Ver Ayudas");
-        jButtonVerAyudas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerAyudasActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -233,10 +226,6 @@ public class IndexAdminstrador extends javax.swing.JFrame {
                         .addGap(169, 169, 169)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 94, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonVerAyudas, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(194, 194, 194))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,9 +253,7 @@ public class IndexAdminstrador extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonVerMultas)
                     .addComponent(jButtonMultar))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonVerAyudas)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -293,11 +280,23 @@ public class IndexAdminstrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonFacturarActionPerformed
 
     private void jButtonVerFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerFacturasActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarFacturasPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerFacturasActionPerformed
 
     private void jButtonVerPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropietariosActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarPropietariosPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerPropietariosActionPerformed
 
     private void jButtonRegistrarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarPropietarioActionPerformed
@@ -321,20 +320,34 @@ public class IndexAdminstrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonMultarActionPerformed
 
     private void jButtonVerEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerEmpleadosActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarEmpleadosPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerEmpleadosActionPerformed
 
     private void jButtonVerPropiedadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropiedadesActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarPropiedadesPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerPropiedadesActionPerformed
 
     private void jButtonVerMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerMultasActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarMultasPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerMultasActionPerformed
-
-    private void jButtonVerAyudasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerAyudasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonVerAyudasActionPerformed
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
         ActualizarEmpleado actualizarEmpleado = new ActualizarEmpleado();
@@ -391,7 +404,6 @@ public class IndexAdminstrador extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRegistrarPropiedad;
     private javax.swing.JButton jButtonRegistrarPropietario;
     private javax.swing.JButton jButtonSalir;
-    private javax.swing.JButton jButtonVerAyudas;
     private javax.swing.JButton jButtonVerEmpleados;
     private javax.swing.JButton jButtonVerFacturas;
     private javax.swing.JButton jButtonVerMultas;

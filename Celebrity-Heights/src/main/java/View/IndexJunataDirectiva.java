@@ -4,6 +4,10 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
+import Model.Listar;
+
 /**
  *
  * @author spala
@@ -32,7 +36,6 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButtonActualizar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
-        jButtonAyuda = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonVerMultas = new javax.swing.JButton();
         jButtonEditarMultas = new javax.swing.JButton();
@@ -65,24 +68,12 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
             }
         });
 
-        jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonAyuda.setText("Ayuda");
-        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAyudaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jButtonAyuda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(319, Short.MAX_VALUE)
                 .addComponent(jButtonActualizar)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonSalir)
@@ -94,8 +85,7 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonActualizar)
-                    .addComponent(jButtonSalir)
-                    .addComponent(jButtonAyuda))
+                    .addComponent(jButtonSalir))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -209,26 +199,39 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonEditarMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarMultasActionPerformed
-        Multar multar = new Multar();
-        multar.setVisible(true);
+        EditarMulta editarMulta = new EditarMulta();
+        editarMulta.setVisible(true);
     }//GEN-LAST:event_jButtonEditarMultasActionPerformed
 
     private void jButtonVerMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerMultasActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarMultasPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerMultasActionPerformed
 
     private void jButtonVerPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropietariosActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarPropietariosPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerPropietariosActionPerformed
 
     private void jButtonVerPropiedadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropiedadesActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarPropiedadesPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerPropiedadesActionPerformed
-
-    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
-        Ayuda ayuda = new Ayuda();
-        ayuda.setVisible(true);
-    }//GEN-LAST:event_jButtonAyudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,14 +278,13 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IndexPropietario().setVisible(true);
+                new IndexJunataDirectiva().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonAyuda;
     private javax.swing.JButton jButtonEditarMultas;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonVerMultas;

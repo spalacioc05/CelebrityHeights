@@ -4,6 +4,9 @@
  */
 package View;
 
+import Model.Listar;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author spala
@@ -30,7 +33,6 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButtonAyuda = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonVerProfecion = new javax.swing.JButton();
@@ -46,16 +48,6 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(197, 168, 128));
 
-        jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonAyuda.setText("Ayuda");
-        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAyudaActionPerformed(evt);
-            }
-        });
-
         jButtonSalir.setBackground(new java.awt.Color(197, 168, 128));
         jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(44, 44, 44));
@@ -66,9 +58,7 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jButtonAyuda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(479, Short.MAX_VALUE)
                 .addComponent(jButtonSalir)
                 .addGap(34, 34, 34))
         );
@@ -76,9 +66,7 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonAyuda)
-                    .addComponent(jButtonSalir))
+                .addComponent(jButtonSalir)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -110,6 +98,11 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
         jButtonVerHorarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerHorarios.setForeground(new java.awt.Color(44, 44, 44));
         jButtonVerHorarios.setText("Ir a ver");
+        jButtonVerHorarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerHorariosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -180,10 +173,15 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
-        Ayuda ayuda = new Ayuda();
-        ayuda.setVisible(true);
-    }//GEN-LAST:event_jButtonAyudaActionPerformed
+    private void jButtonVerHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerHorariosActionPerformed
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarHorarioZonasComunesPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButtonVerHorariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,13 +228,12 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IndexPropietario().setVisible(true);
+                new IndexFuturoComprador().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAyuda;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonVerHorarios;
     private javax.swing.JButton jButtonVerProfecion;

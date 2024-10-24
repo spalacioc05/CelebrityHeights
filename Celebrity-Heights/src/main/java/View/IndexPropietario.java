@@ -4,6 +4,9 @@
  */
 package View;
 
+import Model.Listar;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author spala
@@ -32,7 +35,6 @@ public class IndexPropietario extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButtonActualizar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
-        jButtonAyuda = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonPropiedades = new javax.swing.JButton();
         jButtonFacturas = new javax.swing.JButton();
@@ -66,24 +68,12 @@ public class IndexPropietario extends javax.swing.JFrame {
             }
         });
 
-        jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonAyuda.setText("Ayuda");
-        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAyudaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jButtonAyuda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(295, Short.MAX_VALUE)
                 .addComponent(jButtonActualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonSalir)
@@ -95,8 +85,7 @@ public class IndexPropietario extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonActualizar)
-                    .addComponent(jButtonSalir)
-                    .addComponent(jButtonAyuda))
+                    .addComponent(jButtonSalir))
                 .addGap(22, 22, 22))
         );
 
@@ -237,13 +226,15 @@ public class IndexPropietario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonMultasActionPerformed
 
     private void jButtonHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHorariosActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarHorarioZonasComunesPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
     }//GEN-LAST:event_jButtonHorariosActionPerformed
-
-    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
-        Ayuda ayuda = new Ayuda();
-        ayuda.setVisible(true);
-    }//GEN-LAST:event_jButtonAyudaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,7 +289,6 @@ public class IndexPropietario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonAyuda;
     private javax.swing.JButton jButtonFacturas;
     private javax.swing.JButton jButtonHorarios;
     private javax.swing.JButton jButtonMultas;

@@ -1,2 +1,21 @@
-indicacion,estado
-limpie el patio,false
+idIndicacion,indicación,estado
+1,Limpie el patio,false
+2,Riegue las plantas,true
+3,Limpie las ventanas,false
+4,Organice el garaje,false
+5,Recoja la basura,true
+6,Lave los platos,false
+7,Barra la entrada,true
+8,Desinfecte el baño,false
+9,Lave la ropa,true
+10,Aspirar la alfombra,false
+11,Ordenar la sala,true
+12,Cambiar las sábanas,false
+13,Limpie el refrigerador,true
+14,Saque la basura reciclable,false
+15,Corte el césped,false
+16,Lave el coche,true
+17,Ordene los libros,false
+18,Limpie el comedor,false
+19,Limpiar los espejos,true
+20,Reparar la cerca,false

@@ -4,6 +4,10 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
+import Model.Listar;
+
 /**
  *
  * @author spala
@@ -32,11 +36,11 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButtonActualizar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
-        jButtonAyuda = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonRegistrarVisita = new javax.swing.JButton();
         jButtonEnviarIndicacion = new javax.swing.JButton();
         jButtonVerVisitantes = new javax.swing.JButton();
+        jButtonHorarios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,24 +68,12 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
             }
         });
 
-        jButtonAyuda.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonAyuda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonAyuda.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonAyuda.setText("Ayuda");
-        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAyudaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jButtonAyuda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(323, Short.MAX_VALUE)
                 .addComponent(jButtonActualizar)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonSalir)
@@ -93,8 +85,7 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonActualizar)
-                    .addComponent(jButtonSalir)
-                    .addComponent(jButtonAyuda))
+                    .addComponent(jButtonSalir))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -132,6 +123,16 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
             }
         });
 
+        jButtonHorarios.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonHorarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonHorarios.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonHorarios.setText("Horario de Zonas Comunes");
+        jButtonHorarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHorariosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -150,7 +151,11 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(236, 236, 236)
                         .addComponent(jButtonVerVisitantes, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonHorarios)
+                .addGap(193, 193, 193))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,9 +167,11 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRegistrarVisita)
                     .addComponent(jButtonEnviarIndicacion))
-                .addGap(29, 29, 29)
+                .addGap(28, 28, 28)
                 .addComponent(jButtonVerVisitantes)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButtonHorarios)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -203,13 +210,24 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEnviarIndicacionActionPerformed
 
     private void jButtonVerVisitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerVisitantesActionPerformed
-        // TODO add your handling code here:
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarVisitantesPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonVerVisitantesActionPerformed
 
-    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
-        Ayuda ayuda = new Ayuda();
-        ayuda.setVisible(true);
-    }//GEN-LAST:event_jButtonAyudaActionPerformed
+    private void jButtonHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHorariosActionPerformed
+        Listar listar = new Listar();
+        boolean suseso = listar.ListarHorarioZonasComunesPDF();
+        if (suseso) {
+            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButtonHorariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,15 +274,15 @@ public class IndexPersonalSeguridad extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IndexPropietario().setVisible(true);
+                new IndexPersonalSeguridad().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonAyuda;
     private javax.swing.JButton jButtonEnviarIndicacion;
+    private javax.swing.JButton jButtonHorarios;
     private javax.swing.JButton jButtonRegistrarVisita;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonVerVisitantes;
