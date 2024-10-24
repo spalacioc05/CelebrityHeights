@@ -106,7 +106,7 @@
                       <Component id="jButtonVerMultas" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonMultar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="117" max="32767" attributes="0"/>
+                  <EmptySpace pref="76" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

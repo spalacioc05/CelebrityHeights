@@ -37,8 +37,8 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         jButtonActualizar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButtonVerMultas = new javax.swing.JButton();
-        jButtonEditarMultas = new javax.swing.JButton();
+        jButtonMultasPendientes = new javax.swing.JButton();
+        jButtonSolicitudMulta = new javax.swing.JButton();
         jButtonVerPropietarios = new javax.swing.JButton();
         jButtonVerPropiedades = new javax.swing.JButton();
 
@@ -73,7 +73,7 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(319, Short.MAX_VALUE)
+                .addContainerGap(327, Short.MAX_VALUE)
                 .addComponent(jButtonActualizar)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonSalir)
@@ -93,23 +93,23 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(46, 74, 87));
         jLabel1.setText("Junta Directiva");
 
-        jButtonVerMultas.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonVerMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonVerMultas.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonVerMultas.setText("Ver Multas");
-        jButtonVerMultas.addActionListener(new java.awt.event.ActionListener() {
+        jButtonMultasPendientes.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonMultasPendientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonMultasPendientes.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonMultasPendientes.setText("Multas Pendientes");
+        jButtonMultasPendientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerMultasActionPerformed(evt);
+                jButtonMultasPendientesActionPerformed(evt);
             }
         });
 
-        jButtonEditarMultas.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonEditarMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonEditarMultas.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonEditarMultas.setText("Editar Multas");
-        jButtonEditarMultas.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSolicitudMulta.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonSolicitudMulta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonSolicitudMulta.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonSolicitudMulta.setText("Solicitud de Multa");
+        jButtonSolicitudMulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEditarMultasActionPerformed(evt);
+                jButtonSolicitudMultaActionPerformed(evt);
             }
         });
 
@@ -141,18 +141,18 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonEditarMultas)
-                            .addComponent(jButtonVerMultas, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(56, 56, 56)
+                        .addGap(112, 112, 112)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonMultasPendientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSolicitudMulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(76, 76, 76)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonVerPropietarios)
                             .addComponent(jButtonVerPropiedades)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(182, 182, 182)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,11 +163,11 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonVerPropietarios)
-                    .addComponent(jButtonEditarMultas))
+                    .addComponent(jButtonSolicitudMulta))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonVerPropiedades)
-                    .addComponent(jButtonVerMultas))
+                    .addComponent(jButtonMultasPendientes))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -198,20 +198,20 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
-    private void jButtonEditarMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarMultasActionPerformed
-        EditarMulta editarMulta = new EditarMulta();
+    private void jButtonSolicitudMultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSolicitudMultaActionPerformed
+        SolicitudMulta editarMulta = new SolicitudMulta();
         editarMulta.setVisible(true);
-    }//GEN-LAST:event_jButtonEditarMultasActionPerformed
+    }//GEN-LAST:event_jButtonSolicitudMultaActionPerformed
 
-    private void jButtonVerMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerMultasActionPerformed
-        Listar listar = new Listar();
-        boolean suseso = listar.ListarMultasPDF();
-        if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_jButtonVerMultasActionPerformed
+    private void jButtonMultasPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultasPendientesActionPerformed
+//        Listar listar = new Listar();
+//        boolean suseso = listar.ListarMultasPendientesPDF();
+//        if (suseso) {
+//            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+//        } else {
+//            JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+//        }
+    }//GEN-LAST:event_jButtonMultasPendientesActionPerformed
 
     private void jButtonVerPropietariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPropietariosActionPerformed
         Listar listar = new Listar();
@@ -285,9 +285,9 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonEditarMultas;
+    private javax.swing.JButton jButtonMultasPendientes;
     private javax.swing.JButton jButtonSalir;
-    private javax.swing.JButton jButtonVerMultas;
+    private javax.swing.JButton jButtonSolicitudMulta;
     private javax.swing.JButton jButtonVerPropiedades;
     private javax.swing.JButton jButtonVerPropietarios;
     private javax.swing.JLabel jLabel1;

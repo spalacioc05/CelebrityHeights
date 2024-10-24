@@ -38,7 +38,7 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButtonVerSolicitudes = new javax.swing.JButton();
         jButtonHorarios = new javax.swing.JButton();
-        jButtonEditarSolicitud = new javax.swing.JButton();
+        jButtonSolicitudIndicacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,7 +94,7 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         jButtonVerSolicitudes.setBackground(new java.awt.Color(197, 168, 128));
         jButtonVerSolicitudes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonVerSolicitudes.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonVerSolicitudes.setText("Ver Solicitudes");
+        jButtonVerSolicitudes.setText("Indicaciones");
         jButtonVerSolicitudes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVerSolicitudesActionPerformed(evt);
@@ -111,13 +111,13 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
             }
         });
 
-        jButtonEditarSolicitud.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonEditarSolicitud.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonEditarSolicitud.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonEditarSolicitud.setText("Editar Solicitud");
-        jButtonEditarSolicitud.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSolicitudIndicacion.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonSolicitudIndicacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonSolicitudIndicacion.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonSolicitudIndicacion.setText("Solicitud de Indicacion");
+        jButtonSolicitudIndicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEditarSolicitudActionPerformed(evt);
+                jButtonSolicitudIndicacionActionPerformed(evt);
             }
         });
 
@@ -132,7 +132,7 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
                         .addGap(116, 116, 116)
                         .addComponent(jButtonVerSolicitudes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonEditarSolicitud))
+                        .addComponent(jButtonSolicitudIndicacion))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 127, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -151,7 +151,7 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonVerSolicitudes)
-                    .addComponent(jButtonEditarSolicitud))
+                    .addComponent(jButtonSolicitudIndicacion))
                 .addGap(29, 29, 29)
                 .addComponent(jButtonHorarios)
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -200,9 +200,9 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonHorariosActionPerformed
 
-    private void jButtonEditarSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarSolicitudActionPerformed
+    private void jButtonSolicitudIndicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSolicitudIndicacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEditarSolicitudActionPerformed
+    }//GEN-LAST:event_jButtonSolicitudIndicacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,9 +256,9 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonEditarSolicitud;
     private javax.swing.JButton jButtonHorarios;
     private javax.swing.JButton jButtonSalir;
+    private javax.swing.JButton jButtonSolicitudIndicacion;
     private javax.swing.JButton jButtonVerSolicitudes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
