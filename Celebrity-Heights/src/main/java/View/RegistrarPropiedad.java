@@ -4,6 +4,9 @@
  */
 package View;
 
+import Controller.GestionarPropiedad;
+import Model.Propiedad;
+
 /**
  *
  * @author spala
@@ -259,7 +262,29 @@ public class RegistrarPropiedad extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        // TODO add your handling code here:
+        try {
+            String idPropietario = jTextFieldIDPropietario.getText();
+            String idPropiedad = jTextFieldIDPropiedad.getText();
+            String direccionPropiedad = jTextFieldDireccionPropiedad.getText();
+            float sizeM2 = Float.parseFloat(jTextFieldSizeM2.getText());
+            int habitaciones = Integer.parseInt(jTextFieldHabitaciones.getText());
+            int bathrooms = Integer.parseInt(jTextFieldBathrooms.getText());
+            double precioM2 = Double.parseDouble(jTextFieldPrecioM2.getText());
+            String fechaAdquisicion = jTextFieldFechaAdquisicion.getText();
+            double valorAdministracion = Double.parseDouble(jTextFieldValorAdministracion.getText());
+
+            Propiedad propiedad = new Propiedad(idPropiedad, direccionPropiedad, sizeM2, habitaciones, bathrooms, precioM2, fechaAdquisicion, valorAdministracion);
+            GestionarPropiedad gestionarPropiedad = new GestionarPropiedad();
+
+            if (gestionarPropiedad.registrarPropiedad(idPropietario, propiedad)) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Propiedad registrada exitosamente.");
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar la propiedad.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     /**

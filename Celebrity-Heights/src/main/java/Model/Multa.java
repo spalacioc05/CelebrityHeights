@@ -16,15 +16,15 @@ public class Multa {
     private String fechaVencimiento;
     private String fechaPago;
     private String motivo;
-    private int monto;
-    private int iva;
-    private int montoTotal;
+    private double monto;
+    private double iva;
+    private double montoTotal;
     private boolean pagado;
 
     public Multa() {
     }
 
-    public Multa(String idMulta, String idPropiedad, String idPropietario, String fechaExpedicion, String fechaVencimiento, String fechaPago, String motivo, int monto, int iva, int montoTotal, boolean pagado) {
+    public Multa(String idMulta, String idPropiedad, String idPropietario, String fechaExpedicion, String fechaVencimiento, String fechaPago, String motivo, double monto, double iva, double montoTotal, boolean pagado) {
         this.idMulta = idMulta;
         this.idPropiedad = idPropiedad;
         this.idPropietario = idPropietario;
@@ -94,27 +94,27 @@ public class Multa {
         this.motivo = motivo;
     }
 
-    public int getMonto() {
+    public double getMonto() {
         return monto;
     }
 
-    public void setMonto(int monto) {
+    public void setMonto(double monto) {
         this.monto = monto;
     }
 
-    public int getIva() {
+    public double getIva() {
         return iva;
     }
 
-    public void setIva(int iva) {
+    public void setIva(double iva) {
         this.iva = iva;
     }
 
-    public int getMontoTotal() {
+    public double getMontoTotal() {
         return montoTotal;
     }
 
-    public void setMontoTotal(int montoTotal) {
+    public void setMontoTotal(double montoTotal) {
         this.montoTotal = montoTotal;
     }
 

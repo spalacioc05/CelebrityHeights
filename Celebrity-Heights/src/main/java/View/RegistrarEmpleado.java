@@ -4,6 +4,9 @@
  */
 package View;
 
+import Controller.GestionarEmpleado;
+import Model.Empleado;
+
 /**
  *
  * @author spala
@@ -119,6 +122,11 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         jButtonRegistar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonRegistar.setForeground(new java.awt.Color(247, 247, 247));
         jButtonRegistar.setText("Registar");
+        jButtonRegistar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistarActionPerformed(evt);
+            }
+        });
 
         jTextFieldNombre.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldNombre.setForeground(new java.awt.Color(44, 44, 44));
@@ -273,6 +281,33 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistarActionPerformed
+        try {
+            String id = jTextFieldID.getText();
+            String clave = new String(jPasswordFieldClave.getPassword());
+            String rol = jComboBoxRol.getSelectedItem().toString();
+            String nombre = jTextFieldNombre.getText();
+            String telefono = jTextFieldTelefono.getText();
+            String correo = jTextFieldCorreo.getText();
+            String fechaNacimiento = jTextFieldFechaNacimiento.getText();
+            String cargo = jTextFieldCargo.getText();
+            String fechaContratacion = jTextFieldFechaContratacion.getText();
+            double salario = Double.parseDouble(jTextFieldSalario.getText());
+
+            Empleado empleado = new Empleado(cargo, fechaContratacion, salario, id, clave, rol, nombre, telefono, correo, fechaNacimiento);
+            GestionarEmpleado gestionarEmpleado = new GestionarEmpleado();
+
+            if (gestionarEmpleado.registrar(empleado)) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Empleado registrado exitosamente.");
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar el empleado.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButtonRegistarActionPerformed
 
     /**
      * @param args the command line arguments

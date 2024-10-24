@@ -10,9 +10,9 @@ package Model;
  */
 
 public class Factura {
-    private int idFactura;
-    private int idPropiedad;
-    private int idPropietario;
+    private String idFactura;
+    private String idPropiedad;
+    private String idPropietario;
     private String fechaExpedicion;
     private String fechaVencimiento;
     private String fechaPago;
@@ -25,7 +25,7 @@ public class Factura {
     public Factura() {
     }
 
-    public Factura(int idFactura, int idPropiedad, int idPropietario, String fechaExpedicion, String fechaVencimiento, String fechaPago, String tipoFactura, double monto, double iva, double montoTotal, boolean pagado) {
+    public Factura(String idFactura, String idPropiedad, String idPropietario, String fechaExpedicion, String fechaVencimiento, String fechaPago, String tipoFactura, double monto, double iva, double montoTotal, boolean pagado) {
         this.idFactura = idFactura;
         this.idPropiedad = idPropiedad;
         this.idPropietario = idPropietario;
@@ -39,27 +39,27 @@ public class Factura {
         this.pagado = pagado;
     }
 
-    public int getIdFactura() {
+    public String getIdFactura() {
         return idFactura;
     }
 
-    public void setIdFactura(int idFactura) {
+    public void setIdFactura(String idFactura) {
         this.idFactura = idFactura;
     }
 
-    public int getIdPropiedad() {
+    public String getIdPropiedad() {
         return idPropiedad;
     }
 
-    public void setIdPropiedad(int idPropiedad) {
+    public void setIdPropiedad(String idPropiedad) {
         this.idPropiedad = idPropiedad;
     }
 
-    public int getIdPropietario() {
+    public String getIdPropietario() {
         return idPropietario;
     }
 
-    public void setIdPropietario(int idPropietario) {
+    public void setIdPropietario(String idPropietario) {
         this.idPropietario = idPropietario;
     }
 

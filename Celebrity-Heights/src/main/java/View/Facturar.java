@@ -4,6 +4,9 @@
  */
 package View;
 
+import Controller.GestionarFactura;
+import Model.Factura;
+
 /**
  *
  * @author spala
@@ -47,7 +50,6 @@ public class Facturar extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jTextFieldFechaVencimiento = new javax.swing.JTextField();
         jComboBoxTipoFactura = new javax.swing.JComboBox<>();
-        jButtonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,16 +135,6 @@ public class Facturar extends javax.swing.JFrame {
         jComboBoxTipoFactura.setForeground(new java.awt.Color(44, 44, 44));
         jComboBoxTipoFactura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "administracion", "servicios" }));
 
-        jButtonBuscar.setBackground(new java.awt.Color(46, 74, 87));
-        jButtonBuscar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonBuscar.setForeground(new java.awt.Color(247, 247, 247));
-        jButtonBuscar.setText("Buscar");
-        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -155,13 +147,8 @@ public class Facturar extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel1))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldIDFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldIDFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -183,12 +170,13 @@ public class Facturar extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldIDPropietario, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldFechaExpedicion))))
-                        .addGap(31, 31, 31)
-                        .addComponent(jButtonBuscar))
+                                    .addComponent(jTextFieldFechaExpedicion)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(189, 189, 189)
-                        .addComponent(jButtonGuardar)))
+                        .addComponent(jButtonGuardar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -204,9 +192,8 @@ public class Facturar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldIDPropiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jButtonBuscar))
-                .addGap(22, 22, 22)
+                    .addComponent(jLabel4))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldIDPropietario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
@@ -228,32 +215,49 @@ public class Facturar extends javax.swing.JFrame {
                     .addComponent(jTextFieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(jButtonGuardar)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonGuardarActionPerformed
+        try {
+            String idFactura = jTextFieldIDFactura.getText();
+            String idPropiedad = jTextFieldIDPropiedad.getText();
+            String idPropietario = jTextFieldIDPropietario.getText();
+            String fechaExpedicion = jTextFieldFechaExpedicion.getText();
+            String fechaVencimiento = jTextFieldFechaVencimiento.getText();
+            String tipoFactura = jComboBoxTipoFactura.getSelectedItem().toString();
+            double monto = Double.parseDouble(jTextFieldMonto.getText());
+            double iva = monto * 0.19;
+            double montoTotal = monto + iva;
+            boolean pagado = false;
 
-    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBuscarActionPerformed
+            Factura factura = new Factura(idFactura, idPropiedad, idPropietario, fechaExpedicion, fechaVencimiento, "", tipoFactura, monto, iva, montoTotal, pagado);
+            GestionarFactura gestionarFactura = new GestionarFactura();
+
+            if (gestionarFactura.registrarFactura(factura)) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Factura registrada exitosamente.");
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar la factura.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,7 +298,6 @@ public class Facturar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JComboBox<String> jComboBoxTipoFactura;
     private javax.swing.JLabel jLabel1;

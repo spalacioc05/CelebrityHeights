@@ -4,6 +4,9 @@
  */
 package View;
 
+import Controller.GestionarSeguridad;
+import Model.Visitante;
+
 /**
  *
  * @author spala
@@ -38,13 +41,12 @@ public class RegistrarVisita extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jButtonGuardar = new javax.swing.JButton();
         jTextFieldNombre = new javax.swing.JTextField();
         jTextFieldIDPropiedad = new javax.swing.JTextField();
         jTextFieldFechaEntrada = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jTextFieldHoraEntrada = new javax.swing.JTextField();
-        jButtonBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaMotivo = new javax.swing.JTextArea();
 
@@ -93,13 +95,13 @@ public class RegistrarVisita extends javax.swing.JFrame {
             .addGap(0, 74, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(46, 74, 87));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(247, 247, 247));
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonGuardar.setBackground(new java.awt.Color(46, 74, 87));
+        jButtonGuardar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonGuardar.setForeground(new java.awt.Color(247, 247, 247));
+        jButtonGuardar.setText("Guardar");
+        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonGuardarActionPerformed(evt);
             }
         });
 
@@ -120,16 +122,6 @@ public class RegistrarVisita extends javax.swing.JFrame {
         jTextFieldHoraEntrada.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldHoraEntrada.setForeground(new java.awt.Color(44, 44, 44));
 
-        jButtonBuscar.setBackground(new java.awt.Color(46, 74, 87));
-        jButtonBuscar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonBuscar.setForeground(new java.awt.Color(247, 247, 247));
-        jButtonBuscar.setText("Buscar");
-        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarActionPerformed(evt);
-            }
-        });
-
         jTextAreaMotivo.setBackground(new java.awt.Color(176, 176, 176));
         jTextAreaMotivo.setColumns(20);
         jTextAreaMotivo.setForeground(new java.awt.Color(44, 44, 44));
@@ -143,9 +135,6 @@ public class RegistrarVisita extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -169,15 +158,16 @@ public class RegistrarVisita extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldIDPropiedad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldFechaEntrada, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(28, 28, 28)
-                        .addComponent(jButtonBuscar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(jButton1))
+                                    .addComponent(jTextFieldFechaEntrada, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(179, 179, 179)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jButtonGuardar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -194,11 +184,10 @@ public class RegistrarVisita extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(21, 21, 21)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldIDPropiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jButtonBuscar))
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -211,18 +200,16 @@ public class RegistrarVisita extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(25, 25, 25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jButtonGuardar)
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,13 +219,28 @@ public class RegistrarVisita extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
+        try {
+            String idVisitante = jTextFieldIDVisitante.getText();
+            String nombreVisitante = jTextFieldNombre.getText();
+            String idPropiedad = jTextFieldIDPropiedad.getText();
+            String fechaEntrada = jTextFieldFechaEntrada.getText();
+            String horaEntrada = jTextFieldHoraEntrada.getText();
+            String motivo = jTextAreaMotivo.getText();
 
-    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBuscarActionPerformed
+            Visitante visitante = new Visitante(idVisitante, nombreVisitante, idPropiedad, fechaEntrada, horaEntrada, motivo);
+            GestionarSeguridad gestionarSeguridad = new GestionarSeguridad();
+
+            if (gestionarSeguridad.registrarVisita(visitante)) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Visita registrada exitosamente.");
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar la visita.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,8 +285,7 @@ public class RegistrarVisita extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonBuscar;
+    private javax.swing.JButton jButtonGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

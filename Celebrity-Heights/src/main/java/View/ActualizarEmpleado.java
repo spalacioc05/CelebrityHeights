@@ -70,6 +70,11 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
         jTextFieldID.setEditable(false);
         jTextFieldID.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldID.setForeground(new java.awt.Color(44, 44, 44));
+        jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(44, 44, 44));
@@ -286,6 +291,10 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDActionPerformed
 
     /**
      * @param args the command line arguments

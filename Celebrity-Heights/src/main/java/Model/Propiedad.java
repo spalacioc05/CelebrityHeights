@@ -24,7 +24,7 @@ public class Propiedad {
     }
 
     // Constructor con parámetros
-    public Propiedad(String idPropiedad, String direccionPropiedad, int sizeM2, int habitaciones, int bathrooms, int precioM2, String fechaAdquisicion, int valorAdministracion) {
+    public Propiedad(String idPropiedad, String direccionPropiedad, float sizeM2, int habitaciones, int bathrooms, double precioM2, String fechaAdquisicion, double valorAdministracion) {
         this.idPropiedad = idPropiedad;
         this.direccionPropiedad = direccionPropiedad;
         this.sizeM2 = sizeM2;

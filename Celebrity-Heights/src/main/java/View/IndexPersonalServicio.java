@@ -201,7 +201,8 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonHorariosActionPerformed
 
     private void jButtonSolicitudIndicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSolicitudIndicacionActionPerformed
-        // TODO add your handling code here:
+        SolicitudIndicacion solicitudIndicacion = new SolicitudIndicacion();
+        solicitudIndicacion.setVisible(true);
     }//GEN-LAST:event_jButtonSolicitudIndicacionActionPerformed
 
     /**

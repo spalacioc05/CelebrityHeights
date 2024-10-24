@@ -36,8 +36,6 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButtonGuardar = new javax.swing.JButton();
         jButtonBuscar = new javax.swing.JButton();
-        jButtonEliminar = new javax.swing.JButton();
-        jButtonRechazar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,11 +43,11 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(46, 74, 87));
-        jLabel1.setText("Solicitud de Multa");
+        jLabel1.setText("Solicitud de Indicacion");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
-        jLabel2.setText("ID Multa");
+        jLabel2.setText("ID Indicacion");
 
         jTextFieldIDMulta.setEditable(false);
         jTextFieldIDMulta.setBackground(new java.awt.Color(176, 176, 176));
@@ -61,17 +59,17 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGap(0, 542, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGap(0, 72, Short.MAX_VALUE)
         );
 
         jButtonGuardar.setBackground(new java.awt.Color(46, 74, 87));
         jButtonGuardar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonGuardar.setForeground(new java.awt.Color(247, 247, 247));
-        jButtonGuardar.setText("Aceptar");
+        jButtonGuardar.setText("Realizada");
         jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGuardarActionPerformed(evt);
@@ -88,53 +86,25 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
             }
         });
 
-        jButtonEliminar.setBackground(new java.awt.Color(46, 74, 87));
-        jButtonEliminar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonEliminar.setForeground(new java.awt.Color(247, 247, 247));
-        jButtonEliminar.setText("Guardar");
-        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarActionPerformed(evt);
-            }
-        });
-
-        jButtonRechazar.setBackground(new java.awt.Color(128, 0, 32));
-        jButtonRechazar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonRechazar.setForeground(new java.awt.Color(247, 247, 247));
-        jButtonRechazar.setText("Rechazar");
-        jButtonRechazar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRechazarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(283, 283, 283)
-                                .addComponent(jButtonEliminar))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(74, 74, 74)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldIDMulta, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonBuscar))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(141, 141, 141)
-                                .addComponent(jButtonGuardar)
-                                .addGap(59, 59, 59)
-                                .addComponent(jButtonRechazar)
-                                .addGap(353, 353, 353))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldIDMulta, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonBuscar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(222, 222, 222)
+                        .addComponent(jButtonGuardar))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
                         .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -142,24 +112,16 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jButtonBuscar)
-                            .addComponent(jTextFieldIDMulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonGuardar)
-                            .addComponent(jButtonRechazar))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(506, 506, 506)
-                        .addComponent(jButtonEliminar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jButtonBuscar)
+                    .addComponent(jTextFieldIDMulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(jButtonGuardar)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -172,7 +134,7 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -185,14 +147,6 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonBuscarActionPerformed
-
-    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEliminarActionPerformed
-
-    private void jButtonRechazarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRechazarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRechazarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,9 +248,7 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
-    private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonGuardar;
-    private javax.swing.JButton jButtonRechazar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

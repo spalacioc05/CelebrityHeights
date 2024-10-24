@@ -217,9 +217,9 @@ public class Listar {
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
                 Factura factura = new Factura(
-                        Integer.parseInt(values[0]),
-                        Integer.parseInt(values[1]),
-                        Integer.parseInt(values[2]),
+                        values[0],
+                        values[1],
+                        values[2],
                         values[3],
                         values[4],
                         values[5],

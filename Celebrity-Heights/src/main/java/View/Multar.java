@@ -4,6 +4,9 @@
  */
 package View;
 
+import Controller.GestionarMulta;
+import Model.Multa;
+
 /**
  *
  * @author spala
@@ -46,7 +49,6 @@ public class Multar extends javax.swing.JFrame {
         jTextFieldMonto = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jTextFieldFechaVencimiento = new javax.swing.JTextField();
-        jButtonBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaMotivo = new javax.swing.JTextArea();
 
@@ -130,16 +132,6 @@ public class Multar extends javax.swing.JFrame {
         jTextFieldFechaVencimiento.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldFechaVencimiento.setForeground(new java.awt.Color(44, 44, 44));
 
-        jButtonBuscar.setBackground(new java.awt.Color(46, 74, 87));
-        jButtonBuscar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonBuscar.setForeground(new java.awt.Color(247, 247, 247));
-        jButtonBuscar.setText("Buscar");
-        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarActionPerformed(evt);
-            }
-        });
-
         jTextAreaMotivo.setBackground(new java.awt.Color(176, 176, 176));
         jTextAreaMotivo.setColumns(20);
         jTextAreaMotivo.setForeground(new java.awt.Color(44, 44, 44));
@@ -154,14 +146,11 @@ public class Multar extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jTextFieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,16 +172,17 @@ public class Multar extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldIDPropietario, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                                     .addComponent(jTextFieldFechaExpedicion)))
-                            .addComponent(jScrollPane1))
-                        .addGap(31, 31, 31)
-                        .addComponent(jButtonBuscar))
+                            .addComponent(jScrollPane1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(182, 182, 182)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonGuardar)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -208,9 +198,8 @@ public class Multar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldIDPropiedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jButtonBuscar))
-                .addGap(22, 22, 22)
+                    .addComponent(jLabel4))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldIDPropietario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
@@ -239,9 +228,7 @@ public class Multar extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,12 +241,31 @@ public class Multar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonGuardarActionPerformed
+        try {
+            String idMulta = jTextFieldIDMulta.getText();
+            String idPropiedad = jTextFieldIDPropiedad.getText();
+            String idPropietario = jTextFieldIDPropietario.getText();
+            String fechaExpedicion = jTextFieldFechaExpedicion.getText();
+            String fechaVencimiento = jTextFieldFechaVencimiento.getText();
+            String motivo = jTextAreaMotivo.getText();
+            double monto = Double.parseDouble(jTextFieldMonto.getText());
+            double iva = monto * 0.19;
+            double montoTotal = monto + iva;
+            boolean pagado = false;
 
-    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBuscarActionPerformed
+            Multa multa = new Multa(idMulta, idPropiedad, idPropietario, fechaExpedicion, fechaVencimiento, "", motivo, monto, iva, montoTotal, pagado);
+            GestionarMulta gestionarMulta = new GestionarMulta();
+
+            if (gestionarMulta.registrarMulta(multa)) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Multa enviada a junta directiva exitosamente.");
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar la multa.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,7 +310,6 @@ public class Multar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;

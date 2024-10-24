@@ -4,6 +4,9 @@
  */
 package View;
 
+import Controller.GestionarPropietario;
+import Model.Propietario;
+
 /**
  *
  * @author spala
@@ -107,6 +110,11 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         jButtonRegistrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonRegistrar.setForeground(new java.awt.Color(247, 247, 247));
         jButtonRegistrar.setText("Registar");
+        jButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistrarActionPerformed(evt);
+            }
+        });
 
         jTextFieldNombre.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldNombre.setForeground(new java.awt.Color(44, 44, 44));
@@ -235,6 +243,31 @@ public class RegistrarPropietario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
+        try {
+            String id = jTextFieldID.getText();
+            String clave = new String(jPasswordFieldClave.getPassword());
+            String nombre = jTextFieldNombre.getText();
+            String telefono = jTextFieldTelefono.getText();
+            String correo = jTextFieldCorreo.getText();
+            String fechaNacimiento = jTextFieldFechaNacimiento.getText();
+            String profesion = jTextFieldProfecion.getText();
+            String ocupacion = jTextFieldOcupacion.getText();
+
+            Propietario propietario = new Propietario(profesion, ocupacion, null, id, clave, "propietario", nombre, telefono, correo, fechaNacimiento);
+            GestionarPropietario gestionarPropietario = new GestionarPropietario();
+
+            if (gestionarPropietario.registrar(propietario)) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Propietario registrado exitosamente.");
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar el propietario.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
     /**
      * @param args the command line arguments

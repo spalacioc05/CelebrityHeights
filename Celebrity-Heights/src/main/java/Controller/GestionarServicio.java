@@ -8,7 +8,6 @@ package Controller;
  *
  * @author spala
  */
-public class GestinarAdministrador {
-    
+public class GestionarServicio {
     
 }
