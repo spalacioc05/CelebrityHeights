@@ -4,6 +4,10 @@
  */
 package View;
 
+import Controller.GestionarLogin;
+import Controller.SesionGlobal;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author spala
@@ -61,11 +65,6 @@ public class Login extends javax.swing.JFrame {
 
         jPasswordFieldClave.setBackground(new java.awt.Color(176, 176, 176));
         jPasswordFieldClave.setForeground(new java.awt.Color(44, 44, 44));
-        jPasswordFieldClave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldClaveActionPerformed(evt);
-            }
-        });
 
         jButtonIngresar.setBackground(new java.awt.Color(46, 74, 87));
         jButtonIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -92,7 +91,7 @@ public class Login extends javax.swing.JFrame {
 
         jComboBoxTipoUsuario.setBackground(new java.awt.Color(176, 176, 176));
         jComboBoxTipoUsuario.setForeground(new java.awt.Color(44, 44, 44));
-        jComboBoxTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "PROPIETARIO", "EMPLEADO", "FUTURO COMPRADOR" }));
+        jComboBoxTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "propietario", "administrador", "seguridad", "servicio", "juntaDirectiva" }));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(44, 44, 44));
@@ -168,12 +167,40 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
-        // TODO add your handling code here:
+        String id = jTextFieldID.getText();
+        String clave = new String(jPasswordFieldClave.getPassword());
+        String rol = jComboBoxTipoUsuario.getSelectedItem().toString();
+    
+        GestionarLogin gestionarLogin = new GestionarLogin();
+        if (gestionarLogin.login(id, clave, rol)) {
+            SesionGlobal.login(id, rol);
+            // Navigate to different windows based on the role
+            switch (rol) {
+                case "propietario":
+                    new IndexPropietario().setVisible(true);
+                    break;
+                case "administrador":
+                    new IndexAdministrador().setVisible(true);
+                    break;
+                case "seguridad":
+                    new IndexPersonalSeguridad().setVisible(true);
+                    break;
+                case "servicio":
+                    new IndexPersonalSeguridad().setVisible(true);
+                    break;
+                case "juntaDirectiva":
+                    new IndexJuntaDirectiva().setVisible(true);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(this, "Rol desconocido", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+            }
+            // Close the login window
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonIngresarActionPerformed
-
-    private void jPasswordFieldClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldClaveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldClaveActionPerformed
 
     /**
      * @param args the command line arguments

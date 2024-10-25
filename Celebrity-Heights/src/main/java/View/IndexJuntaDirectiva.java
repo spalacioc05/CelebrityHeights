@@ -12,12 +12,12 @@ import Model.Listar;
  *
  * @author spala
  */
-public class IndexJunataDirectiva extends javax.swing.JFrame {
+public class IndexJuntaDirectiva extends javax.swing.JFrame {
 
     /**
      * Creates new form Index
      */
-    public IndexJunataDirectiva() {
+    public IndexJuntaDirectiva() {
         initComponents();
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -278,7 +278,7 @@ public class IndexJunataDirectiva extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IndexJunataDirectiva().setVisible(true);
+                new IndexJuntaDirectiva().setVisible(true);
             }
         });
     }

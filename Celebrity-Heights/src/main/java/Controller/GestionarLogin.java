@@ -13,10 +13,10 @@ import java.io.IOException;
  *
  * @author spala
  */
-public class Login {
+public class GestionarLogin {
 
     public boolean login(String id, String clave, String rol) {
-        String filePath = rol.equals("propietario") ? "propietariosPropiedades.json" : "empleados.json";
+        String filePath = rol.equals("propietario") ? "data/propietariosPropiedades.json" : "data/empleados.json";
         ObjectMapper mapper = new ObjectMapper();
 
         try {

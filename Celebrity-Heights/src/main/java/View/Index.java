@@ -4,6 +4,10 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
+import Controller.SesionGlobal;
+
 /**
  *
  * @author spala
@@ -30,6 +34,7 @@ public class Index extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButtonIngresar = new javax.swing.JButton();
+        jButtonFuturoComprador = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +67,16 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
+        jButtonFuturoComprador.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonFuturoComprador.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButtonFuturoComprador.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonFuturoComprador.setText("Futuro Comprador");
+        jButtonFuturoComprador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFuturoCompradorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -73,8 +88,13 @@ public class Index extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonIngresar)
-                .addGap(348, 348, 348))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButtonIngresar)
+                        .addGap(348, 348, 348))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButtonFuturoComprador)
+                        .addGap(304, 304, 304))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,7 +104,9 @@ public class Index extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jButtonIngresar)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(jButtonFuturoComprador)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -102,9 +124,39 @@ public class Index extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
-        Login login = new Login();
-        login.setVisible(true);
+        if (SesionGlobal.isLoggedIn()) {
+            String rol = SesionGlobal.getRolUsuario();
+            // Navigate to different windows based on the role
+            switch (rol) {
+                case "propietario":
+                    new IndexPropietario().setVisible(true);
+                    break;
+                case "administrador":
+                    new IndexAdministrador().setVisible(true);
+                    break;
+                case "seguridad":
+                    new IndexPersonalSeguridad().setVisible(true);
+                    break;
+                case "servicio":
+                    new IndexPersonalSeguridad().setVisible(true);
+                    break;
+                case "juntaDirectiva":
+                    new IndexJuntaDirectiva().setVisible(true);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(this, "Rol desconocido", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+            }
+        } else {
+            Login login = new Login();
+            login.setVisible(true);
+        }
     }//GEN-LAST:event_jButtonIngresarActionPerformed
+
+    private void jButtonFuturoCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFuturoCompradorActionPerformed
+        IndexFuturoComprador indexFuturoComprador = new IndexFuturoComprador();
+        indexFuturoComprador.setVisible(true);
+    }//GEN-LAST:event_jButtonFuturoCompradorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,6 +194,7 @@ public class Index extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonFuturoComprador;
     private javax.swing.JButton jButtonIngresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

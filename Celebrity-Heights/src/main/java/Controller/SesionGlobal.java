@@ -8,10 +8,10 @@ package Controller;
  *
  * @author spala
  */
-public class SesionGobal {
+public class SesionGlobal{
     private static boolean estaAutenticado = false;
-    private static String id;
-    private static String rol;
+    private static String idUsuario;
+    private static String rolUsuario;
 
     public static boolean isLoggedIn() {
         return estaAutenticado;
@@ -19,21 +19,21 @@ public class SesionGobal {
 
     public static void login(String id, String role) {
         estaAutenticado = true;
-        id = id;
-        rol = role;
+        idUsuario = id;
+        rolUsuario = role;
     }
 
     public static void logout() {
         estaAutenticado = false;
-        id = null;
-        rol = null;
+        idUsuario = null;
+        rolUsuario = null;
     }
 
     public static String getIdUsuario() {
-        return id;
+        return idUsuario;
     }
 
     public static String getRolUsuario() {
-        return rol;
+        return rolUsuario;
     }
 }
