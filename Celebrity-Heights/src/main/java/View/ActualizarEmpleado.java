@@ -4,12 +4,17 @@
  */
 package View;
 
+import Controller.GestionarEmpleado;
+import Controller.SesionGlobal;
+import Model.Empleado;
+import javax.swing.JOptionPane;
 /**
  *
  * @author spala
  */
 public class ActualizarEmpleado extends javax.swing.JFrame {
-
+    private GestionarEmpleado gestionarEmpleado;
+    private Empleado empleado;
     /**
      * Creates new form ActualizarEmpleado
      */
@@ -17,6 +22,8 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        gestionarEmpleado = new GestionarEmpleado();
+        cargarDatosEmpleado(SesionGlobal.getIdUsuario());
         
     }
 
@@ -125,6 +132,11 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
         jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonActualizar.setForeground(new java.awt.Color(247, 247, 247));
         jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
 
         jTextFieldNombre.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldNombre.setForeground(new java.awt.Color(44, 44, 44));
@@ -158,6 +170,11 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
         jButtonBorrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonBorrar.setForeground(new java.awt.Color(247, 247, 247));
         jButtonBorrar.setText("Borrar");
+        jButtonBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBorrarActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(44, 44, 44));
@@ -295,6 +312,52 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
     private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldIDActionPerformed
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        empleado.setNombre(jTextFieldNombre.getText());
+        empleado.setTelefono(jTextFieldTelefono.getText());
+        empleado.setCorreo(jTextFieldCorreo.getText());
+        empleado.setRol(jTextFieldRol.getText());
+        empleado.setCargo(jTextFieldCargo.getText());
+        empleado.setFechaContratacion(jTextFieldFechaContratacion.getText());
+        empleado.setSalario(Double.parseDouble(jTextFieldSalario.getText()));
+
+        boolean actualizado = gestionarEmpleado.actualizar(empleado);
+        if (actualizado) {
+            JOptionPane.showMessageDialog(this, "Empleado actualizado correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al actualizar el empleado.");
+        }
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
+
+    private void jButtonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBorrarActionPerformed
+        int confirmacion = JOptionPane.showConfirmDialog(this, "¿Está seguro de que desea eliminar este empleado?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            boolean eliminado = gestionarEmpleado.eliminar(empleado.getId());
+            if (eliminado) {
+                JOptionPane.showMessageDialog(this, "Empleado eliminado correctamente.");
+                this.dispose(); // Cierra la ventana actual
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al eliminar el empleado.");
+            }
+        }
+    }//GEN-LAST:event_jButtonBorrarActionPerformed
+
+    private void cargarDatosEmpleado(String empleadoId) {
+        empleado = gestionarEmpleado.leer(empleadoId);
+        if (empleado != null) {
+            jTextFieldID.setText(empleado.getId());
+            jTextFieldNombre.setText(empleado.getNombre());
+            jTextFieldTelefono.setText(empleado.getTelefono());
+            jTextFieldCorreo.setText(empleado.getCorreo());
+            jTextFieldRol.setText(empleado.getRol());
+            jTextFieldCargo.setText(empleado.getCargo());
+            jTextFieldFechaContratacion.setText(empleado.getFechaContratacion());
+            jTextFieldSalario.setText(String.valueOf(empleado.getSalario()));
+        } else {
+            JOptionPane.showMessageDialog(this, "Empleado no encontrado.");
+        }
+    }
 
     /**
      * @param args the command line arguments

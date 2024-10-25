@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.SesionGlobal;
 import Model.Listar;
 import javax.swing.JOptionPane;
 
@@ -177,7 +178,10 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-        // TODO add your handling code here:
+        SesionGlobal.logout();
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonVerSolicitudesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerSolicitudesActionPerformed

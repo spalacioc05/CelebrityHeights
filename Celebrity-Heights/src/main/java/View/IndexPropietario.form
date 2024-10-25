@@ -53,13 +53,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButtonPropiedades" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton6" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                              <Component id="jButtonListarMisPropiedades" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonListarMisVisitas" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButtonMultas" min="-2" pref="99" max="-2" attributes="0"/>
-                              <Component id="jButtonFacturas" min="-2" pref="99" max="-2" attributes="0"/>
+                              <Component id="jButtonListarMisMultas" min="-2" pref="99" max="-2" attributes="0"/>
+                              <Component id="jButtonListarMisFacturas" min="-2" pref="99" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -79,13 +79,13 @@
                   <Component id="jLabel1" min="-2" pref="75" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonPropiedades" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButtonFacturas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonListarMisPropiedades" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonListarMisFacturas" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButtonMultas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonListarMisVisitas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonListarMisMultas" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="jButtonHorarios" min="-2" max="-2" attributes="0"/>
@@ -175,7 +175,7 @@
             <Property name="text" type="java.lang.String" value="Propietario"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonPropiedades">
+        <Component class="javax.swing.JButton" name="jButtonListarMisPropiedades">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="80" green="a8" red="c5" type="rgb"/>
@@ -189,10 +189,10 @@
             <Property name="text" type="java.lang.String" value="Propiedades"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPropiedadesActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonListarMisPropiedadesActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonFacturas">
+        <Component class="javax.swing.JButton" name="jButtonListarMisFacturas">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="80" green="a8" red="c5" type="rgb"/>
@@ -206,10 +206,10 @@
             <Property name="text" type="java.lang.String" value="Facturas"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonFacturasActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonListarMisFacturasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonMultas">
+        <Component class="javax.swing.JButton" name="jButtonListarMisMultas">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="80" green="a8" red="c5" type="rgb"/>
@@ -223,10 +223,10 @@
             <Property name="text" type="java.lang.String" value="Multas"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMultasActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonListarMisMultasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="jButtonListarMisVisitas">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="80" green="a8" red="c5" type="rgb"/>
@@ -240,7 +240,7 @@
             <Property name="text" type="java.lang.String" value="Ver Visitas"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonListarMisVisitasActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonHorarios">

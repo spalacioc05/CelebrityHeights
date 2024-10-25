@@ -4,11 +4,20 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
+import Controller.GestionarPropietario;
+import Controller.SesionGlobal;
+import Model.Propietario;
+
 /**
  *
  * @author spala
  */
 public class ActualizarPropietario extends javax.swing.JFrame {
+
+    private GestionarPropietario gestionarPropietario;
+    private Propietario propietario;
 
     /**
      * Creates new form ActualizarEmpleado
@@ -17,6 +26,8 @@ public class ActualizarPropietario extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        gestionarPropietario = new GestionarPropietario();
+        cargarDatosPropietario(SesionGlobal.getIdUsuario());
         
     }
 
@@ -114,6 +125,11 @@ public class ActualizarPropietario extends javax.swing.JFrame {
         jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonActualizar.setForeground(new java.awt.Color(247, 247, 247));
         jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
 
         jTextFieldNombre.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldNombre.setForeground(new java.awt.Color(44, 44, 44));
@@ -141,6 +157,11 @@ public class ActualizarPropietario extends javax.swing.JFrame {
         jButtonBorrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonBorrar.setForeground(new java.awt.Color(247, 247, 247));
         jButtonBorrar.setText("Borrar");
+        jButtonBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBorrarActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(44, 44, 44));
@@ -261,6 +282,53 @@ public class ActualizarPropietario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        propietario.setNombre(jTextFieldNombre.getText());
+        propietario.setTelefono(jTextFieldTelefono.getText());
+        propietario.setCorreo(jTextFieldCorreo.getText());
+        propietario.setClave(new String(jPasswordFieldClave.getPassword()));
+        propietario.setFechaNacimiento(jTextFieldFechaNacimiento.getText());
+        propietario.setProfesion(jTextFieldProfecion.getText());
+        propietario.setOcupacion(jTextFieldOcupacion.getText());
+
+        boolean actualizado = gestionarPropietario.actualizar(propietario);
+        if (actualizado) {
+            JOptionPane.showMessageDialog(this, "Propietario actualizado correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al actualizar el propietario.");
+        }
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
+
+    private void jButtonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBorrarActionPerformed
+        int confirmacion = JOptionPane.showConfirmDialog(this, "¿Está seguro de que desea eliminar este propietario?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+    if (confirmacion == JOptionPane.YES_OPTION) {
+        boolean eliminado = gestionarPropietario.eliminar(propietario.getId());
+        if (eliminado) {
+            JOptionPane.showMessageDialog(this, "Propietario eliminado correctamente.");
+            this.dispose(); // Cierra la ventana actual
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al eliminar el propietario.");
+        }
+    }
+    }//GEN-LAST:event_jButtonBorrarActionPerformed
+
+    private void cargarDatosPropietario(String propietarioId) {
+        propietario = gestionarPropietario.leer(propietarioId);
+        if (propietario != null) {
+            jTextFieldID.setText(propietario.getId());
+            jTextFieldNombre.setText(propietario.getNombre());
+            jTextFieldTelefono.setText(propietario.getTelefono());
+            jTextFieldCorreo.setText(propietario.getCorreo());
+            jTextFieldRol.setText(propietario.getRol());
+            jTextFieldProfecion.setText(propietario.getProfesion());
+            jTextFieldOcupacion.setText(propietario.getOcupacion());
+            jPasswordFieldClave.setText(propietario.getClave());
+            jTextFieldFechaNacimiento.setText(propietario.getFechaNacimiento());
+        } else {
+            JOptionPane.showMessageDialog(this, "Propietario no encontrado.");
+        }
+    }
 
     /**
      * @param args the command line arguments

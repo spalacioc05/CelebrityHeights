@@ -6,6 +6,7 @@ package View;
 
 import javax.swing.JOptionPane;
 
+import Controller.SesionGlobal;
 import Model.Listar;
 
 /**
@@ -271,7 +272,10 @@ public class IndexAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-        // TODO add your handling code here:
+        SesionGlobal.logout();
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFacturarActionPerformed

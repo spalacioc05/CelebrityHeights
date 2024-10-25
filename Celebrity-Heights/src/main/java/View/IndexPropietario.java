@@ -4,7 +4,10 @@
  */
 package View;
 
+import Controller.SesionGlobal;
 import Model.Listar;
+import Model.ListarMisPropietario;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -36,10 +39,10 @@ public class IndexPropietario extends javax.swing.JFrame {
         jButtonActualizar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButtonPropiedades = new javax.swing.JButton();
-        jButtonFacturas = new javax.swing.JButton();
-        jButtonMultas = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jButtonListarMisPropiedades = new javax.swing.JButton();
+        jButtonListarMisFacturas = new javax.swing.JButton();
+        jButtonListarMisMultas = new javax.swing.JButton();
+        jButtonListarMisVisitas = new javax.swing.JButton();
         jButtonHorarios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,43 +96,43 @@ public class IndexPropietario extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(46, 74, 87));
         jLabel1.setText("Propietario");
 
-        jButtonPropiedades.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonPropiedades.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonPropiedades.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonPropiedades.setText("Propiedades");
-        jButtonPropiedades.addActionListener(new java.awt.event.ActionListener() {
+        jButtonListarMisPropiedades.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonListarMisPropiedades.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonListarMisPropiedades.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonListarMisPropiedades.setText("Propiedades");
+        jButtonListarMisPropiedades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPropiedadesActionPerformed(evt);
+                jButtonListarMisPropiedadesActionPerformed(evt);
             }
         });
 
-        jButtonFacturas.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonFacturas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonFacturas.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonFacturas.setText("Facturas");
-        jButtonFacturas.addActionListener(new java.awt.event.ActionListener() {
+        jButtonListarMisFacturas.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonListarMisFacturas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonListarMisFacturas.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonListarMisFacturas.setText("Facturas");
+        jButtonListarMisFacturas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonFacturasActionPerformed(evt);
+                jButtonListarMisFacturasActionPerformed(evt);
             }
         });
 
-        jButtonMultas.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonMultas.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonMultas.setText("Multas");
-        jButtonMultas.addActionListener(new java.awt.event.ActionListener() {
+        jButtonListarMisMultas.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonListarMisMultas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonListarMisMultas.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonListarMisMultas.setText("Multas");
+        jButtonListarMisMultas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMultasActionPerformed(evt);
+                jButtonListarMisMultasActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(197, 168, 128));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(44, 44, 44));
-        jButton6.setText("Ver Visitas");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jButtonListarMisVisitas.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonListarMisVisitas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonListarMisVisitas.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonListarMisVisitas.setText("Ver Visitas");
+        jButtonListarMisVisitas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jButtonListarMisVisitasActionPerformed(evt);
             }
         });
 
@@ -156,12 +159,12 @@ public class IndexPropietario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(113, 113, 113)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonPropiedades)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonListarMisPropiedades)
+                            .addComponent(jButtonListarMisVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(84, 84, 84)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonMultas, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButtonListarMisMultas, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonListarMisFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(168, 168, 168)
                         .addComponent(jButtonHorarios)))
@@ -175,12 +178,12 @@ public class IndexPropietario extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonPropiedades)
-                    .addComponent(jButtonFacturas))
+                    .addComponent(jButtonListarMisPropiedades)
+                    .addComponent(jButtonListarMisFacturas))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jButtonMultas))
+                    .addComponent(jButtonListarMisVisitas)
+                    .addComponent(jButtonListarMisMultas))
                 .addGap(32, 32, 32)
                 .addComponent(jButtonHorarios)
                 .addContainerGap(51, Short.MAX_VALUE))
@@ -206,24 +209,35 @@ public class IndexPropietario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-        // TODO add your handling code here:
+        SesionGlobal.logout();
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
-    private void jButtonPropiedadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPropiedadesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonPropiedadesActionPerformed
+    private void jButtonListarMisPropiedadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonListarMisPropiedadesActionPerformed
+        String propietarioId = SesionGlobal.getIdUsuario();
+        ListarMisPropietario listarMisPropietario = new ListarMisPropietario();
+        listarMisPropietario.listarMisPropiedadesPDF(propietarioId);
+    }//GEN-LAST:event_jButtonListarMisPropiedadesActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void jButtonListarMisVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonListarMisVisitasActionPerformed
+        String propietarioId = SesionGlobal.getIdUsuario();
+        ListarMisPropietario listarMisPropietario = new ListarMisPropietario();
+        listarMisPropietario.listarMisVisitasPDF(propietarioId);
+    }//GEN-LAST:event_jButtonListarMisVisitasActionPerformed
 
-    private void jButtonFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFacturasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonFacturasActionPerformed
+    private void jButtonListarMisFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonListarMisFacturasActionPerformed
+        String propietarioId = SesionGlobal.getIdUsuario();
+        ListarMisPropietario listarMisPropietario = new ListarMisPropietario();
+        listarMisPropietario.listarMisFacturasPDF(propietarioId);
+    }//GEN-LAST:event_jButtonListarMisFacturasActionPerformed
 
-    private void jButtonMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonMultasActionPerformed
+    private void jButtonListarMisMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonListarMisMultasActionPerformed
+        String propietarioId = SesionGlobal.getIdUsuario();
+        ListarMisPropietario listarMisPropietario = new ListarMisPropietario();
+        listarMisPropietario.listarMisMultasPDF(propietarioId);
+    }//GEN-LAST:event_jButtonListarMisMultasActionPerformed
 
     private void jButtonHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHorariosActionPerformed
         Listar listar = new Listar();
@@ -287,12 +301,12 @@ public class IndexPropietario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonFacturas;
     private javax.swing.JButton jButtonHorarios;
-    private javax.swing.JButton jButtonMultas;
-    private javax.swing.JButton jButtonPropiedades;
+    private javax.swing.JButton jButtonListarMisFacturas;
+    private javax.swing.JButton jButtonListarMisMultas;
+    private javax.swing.JButton jButtonListarMisPropiedades;
+    private javax.swing.JButton jButtonListarMisVisitas;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

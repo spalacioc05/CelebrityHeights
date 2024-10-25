@@ -38,7 +38,6 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButtonSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonVerProfecion = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -53,26 +52,15 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(197, 168, 128));
 
-        jButtonSalir.setBackground(new java.awt.Color(197, 168, 128));
-        jButtonSalir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonSalir.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonSalir.setText("Salir");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(479, Short.MAX_VALUE)
-                .addComponent(jButtonSalir)
-                .addGap(34, 34, 34))
+            .addGap(0, 589, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jButtonSalir)
-                .addContainerGap(25, Short.MAX_VALUE))
+            .addGap(0, 80, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
@@ -269,7 +257,6 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonVerHorarios;
     private javax.swing.JButton jButtonVerProfecion;
     private javax.swing.JLabel jLabel1;

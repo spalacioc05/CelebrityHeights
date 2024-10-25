@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.SesionGlobal;
 import javax.swing.JOptionPane;
 
 import Model.Listar;
@@ -195,7 +196,10 @@ public class IndexJuntaDirectiva extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-        // TODO add your handling code here:
+        SesionGlobal.logout();
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonSolicitudMultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSolicitudMultaActionPerformed
