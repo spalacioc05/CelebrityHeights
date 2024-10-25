@@ -4,6 +4,11 @@
  */
 package View;
 
+import Controller.GestionarServicio;
+import Model.Indicacion;
+import Model.ListarIndicacion;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author spala
@@ -34,7 +39,7 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextFieldIDMulta = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jButtonGuardar = new javax.swing.JButton();
+        jButtonRealizada = new javax.swing.JButton();
         jButtonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,13 +71,13 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
             .addGap(0, 72, Short.MAX_VALUE)
         );
 
-        jButtonGuardar.setBackground(new java.awt.Color(46, 74, 87));
-        jButtonGuardar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonGuardar.setForeground(new java.awt.Color(247, 247, 247));
-        jButtonGuardar.setText("Realizada");
-        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRealizada.setBackground(new java.awt.Color(46, 74, 87));
+        jButtonRealizada.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonRealizada.setForeground(new java.awt.Color(247, 247, 247));
+        jButtonRealizada.setText("Realizada");
+        jButtonRealizada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGuardarActionPerformed(evt);
+                jButtonRealizadaActionPerformed(evt);
             }
         });
 
@@ -101,7 +106,7 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
                         .addComponent(jButtonBuscar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(222, 222, 222)
-                        .addComponent(jButtonGuardar))
+                        .addComponent(jButtonRealizada))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(107, 107, 107)
@@ -120,7 +125,7 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
                     .addComponent(jButtonBuscar)
                     .addComponent(jTextFieldIDMulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addComponent(jButtonGuardar)
+                .addComponent(jButtonRealizada)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
@@ -140,12 +145,29 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonGuardarActionPerformed
+    private void jButtonRealizadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizadaActionPerformed
+        int idIndicacion = Integer.parseInt(jTextFieldIDMulta.getText());
+        GestionarServicio gestionarServicio = new GestionarServicio();
+        boolean result = gestionarServicio.cambiarEstadoIndicacion(idIndicacion);
+        if (result) {
+            JOptionPane.showMessageDialog(null, "Estado de la indicacion cambiado a true");
+        } else {
+            JOptionPane.showMessageDialog(null, "Indicacion no encontrada");
+        }
+    }//GEN-LAST:event_jButtonRealizadaActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        // TODO add your handling code here:
+        int idIndicacion = Integer.parseInt(jTextFieldIDMulta.getText());
+        GestionarServicio gestionarServicio = new GestionarServicio();
+        Indicacion indicacion = gestionarServicio.buscarIndicacion(idIndicacion);
+        if (indicacion != null) {
+            ListarIndicacion listarIndicacion = new ListarIndicacion();
+            listarIndicacion.generarPDF(indicacion);
+            JOptionPane.showMessageDialog(null, "Indicacion encontrada y guardada en PDF");
+        } else {
+            JOptionPane.showMessageDialog(null, "Indicacion no encontrada");
+
+        }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     /**
@@ -248,7 +270,7 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
-    private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButtonRealizada;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

@@ -77,4 +77,43 @@ public class GestionarMulta {
             e.printStackTrace();
         }
     }
+
+    public Multa buscarMultaPorId(String idMulta) {
+        List<Multa> multasPendientes = leerMultas(FILE_PATH_MULTAS_PENDIENTES);
+        for (Multa multa : multasPendientes) {
+            if (multa.getIdMulta().equals(idMulta)) {
+                return multa;
+            }
+        }
+        return null;
+    }
+
+    public boolean eliminarMultaPendiente(String idMulta) {
+        List<Multa> multasPendientes = leerMultas(FILE_PATH_MULTAS_PENDIENTES);
+        Multa multaAEliminar = null;
+        for (Multa multa : multasPendientes) {
+            if (multa.getIdMulta().equals(idMulta)) {
+                multaAEliminar = multa;
+                break;
+            }
+        }
+        if (multaAEliminar != null) {
+            multasPendientes.remove(multaAEliminar);
+            escribirMultas(multasPendientes, FILE_PATH_MULTAS_PENDIENTES);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean reescribirMultas(String idMulta) {
+        Multa multa = buscarMultaPorId(idMulta);
+        if (multa != null) {
+            List<Multa> multas = leerMultas(FILE_PATH_MULTAS);
+            multas.add(multa);
+            escribirMultas(multas, FILE_PATH_MULTAS);
+            return eliminarMultaPendiente(idMulta);
+        }
+        return false;
+    }
+
 }

@@ -8,6 +8,7 @@ package Model;
  *
  * @author spala
  */
+
 public class Visitante {
     private String idVisitante;
     private String nombreVisitante;

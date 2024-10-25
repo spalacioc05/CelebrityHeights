@@ -4,6 +4,11 @@
  */
 package View;
 
+import Controller.GestionarMulta;
+import Model.ListarMulta;
+import Model.Multa;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author spala
@@ -88,16 +93,6 @@ public class SolicitudMulta extends javax.swing.JFrame {
             }
         });
 
-        jButtonEliminar.setBackground(new java.awt.Color(46, 74, 87));
-        jButtonEliminar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonEliminar.setForeground(new java.awt.Color(247, 247, 247));
-        jButtonEliminar.setText("Guardar");
-        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarActionPerformed(evt);
-            }
-        });
-
         jButtonRechazar.setBackground(new java.awt.Color(128, 0, 32));
         jButtonRechazar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonRechazar.setForeground(new java.awt.Color(247, 247, 247));
@@ -121,19 +116,18 @@ public class SolicitudMulta extends javax.swing.JFrame {
                         .addGap(74, 74, 74)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButtonGuardar)
-                                .addGap(49, 49, 49)
-                                .addComponent(jButtonRechazar))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextFieldIDMulta, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonBuscar))))
+                        .addComponent(jTextFieldIDMulta, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonBuscar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(132, 132, 132)
                         .addComponent(jLabel1))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jButtonGuardar)
+                        .addGap(62, 62, 62)
+                        .addComponent(jButtonRechazar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -177,19 +171,38 @@ public class SolicitudMulta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        // TODO add your handling code here:
+        String idMulta = jTextFieldIDMulta.getText();
+        GestionarMulta gestionarMulta = new GestionarMulta();
+        boolean reescrito = gestionarMulta.reescribirMultas(idMulta);
+        if (reescrito) {
+            JOptionPane.showMessageDialog(null, "Multa aceptada y movida a multas.json.");
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo aceptar la multa.");
+        }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        // TODO add your handling code here:
+        String idMulta = jTextFieldIDMulta.getText();
+        GestionarMulta gestionarMulta = new GestionarMulta();
+        Multa multa = gestionarMulta.buscarMultaPorId(idMulta);
+        if (multa != null) {
+            ListarMulta listarMulta = new ListarMulta();
+            listarMulta.crearYMostrarPDFMulta(multa);
+            JOptionPane.showMessageDialog(null, "Multa encontrada. Se ha generado un archivo PDF con la información de la multa.");
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró la multa con el ID ingresado.");
+        }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
-    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEliminarActionPerformed
-
     private void jButtonRechazarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRechazarActionPerformed
-        // TODO add your handling code here:
+        String idMulta = jTextFieldIDMulta.getText();
+        GestionarMulta gestionarMulta = new GestionarMulta();
+        boolean eliminado = gestionarMulta.eliminarMultaPendiente(idMulta);
+        if (eliminado) {
+            JOptionPane.showMessageDialog(null, "Multa eliminada correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo eliminar la multa.");
+        }
     }//GEN-LAST:event_jButtonRechazarActionPerformed
 
     /**
