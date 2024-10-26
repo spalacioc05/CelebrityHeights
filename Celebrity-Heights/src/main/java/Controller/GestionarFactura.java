@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -18,7 +19,7 @@ import java.util.List;
  */
 
 public class GestionarFactura {
-    private static final String FILE_PATH = "data/facturas.csv";
+    private static final String RUTA_ARCHIVO = "data/facturas.csv";
     private GestionarPropietario gestionarPropietario = new GestionarPropietario();
     private GestionarPropiedad gestionarPropiedad = new GestionarPropiedad();
 
@@ -34,16 +35,16 @@ public class GestionarFactura {
                 return false;
             }
 
-            List<Factura> facturas = leerFacturas();
-            for (Factura f : facturas) {
-                if (f.getIdFactura().equals(factura.getIdFactura())) {
+            List<Factura> listaFacturas = leerFacturas();
+            for (Factura f : listaFacturas) {
+                if (f.getIdFactura() == factura.getIdFactura()) {
                     System.out.println("El ID de la factura no es único.");
                     return false;
                 }
             }
 
-            facturas.add(factura);
-            escribirFacturas(facturas);
+            listaFacturas.add(factura);
+            escribirFacturas(listaFacturas);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,37 +53,37 @@ public class GestionarFactura {
     }
 
     private List<Factura> leerFacturas() {
-        List<Factura> facturas = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
-            String line;
-            br.readLine(); // Skip header
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
+        List<Factura> listaFacturas = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO))) {
+            String linea;
+            br.readLine(); // Saltar encabezado
+            while ((linea = br.readLine()) != null) {
+                String[] valores = linea.split(",");
                 Factura factura = new Factura(
-                        values[0],
-                        values[1],
-                        values[2],
-                        values[3],
-                        values[4],
-                        values[5],
-                        values[6],
-                        Double.parseDouble(values[7]),
-                        Double.parseDouble(values[8]),
-                        Double.parseDouble(values[9]),
-                        Boolean.parseBoolean(values[10])
+                        Integer.parseInt(valores[0]),
+                        valores[1],
+                        valores[2],
+                        valores[3],
+                        valores[4],
+                        valores[5],
+                        valores[6],
+                        Double.parseDouble(valores[7]),
+                        Double.parseDouble(valores[8]),
+                        Double.parseDouble(valores[9]),
+                        Boolean.parseBoolean(valores[10])
                 );
-                facturas.add(factura);
+                listaFacturas.add(factura);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return facturas;
+        return listaFacturas;
     }
 
-    private void escribirFacturas(List<Factura> facturas) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH))) {
+    private void escribirFacturas(List<Factura> listaFacturas) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(RUTA_ARCHIVO))) {
             bw.write("idFactura,idPropiedad,idPropietario,fechaExpedicion,fechaVencimiento,fechaPago,tipoFactura,monto,iva,montoTotal,pagado\n");
-            for (Factura factura : facturas) {
+            for (Factura factura : listaFacturas) {
                 bw.write(String.format("%s,%s,%s,%s,%s,%s,%s,%.2f,%.2f,%.2f,%b\n",
                         factura.getIdFactura(),
                         factura.getIdPropiedad(),
@@ -100,5 +101,25 @@ public class GestionarFactura {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public int generarIdFacturaUnico() {
+        Random random = new Random();
+        List<Factura> listaFacturas = leerFacturas();
+        int idFactura;
+        boolean idUnico;
+
+        do {
+            idFactura = 10000 + random.nextInt(90000);
+            idUnico = true;
+            for (Factura factura : listaFacturas) {
+                if (factura.getIdFactura() == idFactura) {
+                    idUnico = false;
+                    break;
+                }
+            }
+        } while (!idUnico);
+
+        return idFactura;
     }
 }

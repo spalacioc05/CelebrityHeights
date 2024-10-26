@@ -5,8 +5,9 @@
 package View;
 
 import Controller.GestionarServicio;
+import Controller.Listar;
+import Controller.Navegacion;
 import Model.Indicacion;
-import Model.ListarIndicacion;
 import javax.swing.JOptionPane;
 
 /**
@@ -39,6 +40,7 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextFieldIDMulta = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jButtonRealizada = new javax.swing.JButton();
         jButtonBuscar = new javax.swing.JButton();
 
@@ -54,21 +56,36 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
         jLabel2.setText("ID Indicacion");
 
-        jTextFieldIDMulta.setEditable(false);
         jTextFieldIDMulta.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDMulta.setForeground(new java.awt.Color(44, 44, 44));
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jButtonVolver)
+                .addContainerGap(442, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 72, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButtonVolver)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jButtonRealizada.setBackground(new java.awt.Color(46, 74, 87));
@@ -146,29 +163,46 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonRealizadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizadaActionPerformed
-        int idIndicacion = Integer.parseInt(jTextFieldIDMulta.getText());
-        GestionarServicio gestionarServicio = new GestionarServicio();
-        boolean result = gestionarServicio.cambiarEstadoIndicacion(idIndicacion);
-        if (result) {
-            JOptionPane.showMessageDialog(null, "Estado de la indicacion cambiado a true");
-        } else {
-            JOptionPane.showMessageDialog(null, "Indicacion no encontrada");
+        String idText = jTextFieldIDMulta.getText();
+        try {
+            int idIndicacion = Integer.parseInt(idText);
+            System.out.println("ID ingresado: " + idIndicacion);
+            GestionarServicio gestionarServicio = new GestionarServicio();
+            boolean result = gestionarServicio.cambiarEstadoIndicacion(idIndicacion);
+            if (result) {
+                JOptionPane.showMessageDialog(null, "Estado de la indicacion cambiado a true");
+            } else {
+                JOptionPane.showMessageDialog(null, "Indicacion no encontrada");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese un ID válido");
         }
     }//GEN-LAST:event_jButtonRealizadaActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        int idIndicacion = Integer.parseInt(jTextFieldIDMulta.getText());
-        GestionarServicio gestionarServicio = new GestionarServicio();
-        Indicacion indicacion = gestionarServicio.buscarIndicacion(idIndicacion);
-        if (indicacion != null) {
-            ListarIndicacion listarIndicacion = new ListarIndicacion();
-            listarIndicacion.generarPDF(indicacion);
-            JOptionPane.showMessageDialog(null, "Indicacion encontrada y guardada en PDF");
-        } else {
-            JOptionPane.showMessageDialog(null, "Indicacion no encontrada");
-
+        String idText = jTextFieldIDMulta.getText();
+        try {
+            int idIndicacion = Integer.parseInt(idText);
+            System.out.println("ID ingresado: " + idIndicacion);
+            GestionarServicio gestionarServicio = new GestionarServicio();
+            Indicacion indicacion = gestionarServicio.buscarIndicacion(idIndicacion);
+            if (indicacion != null) {
+                System.out.println("Indicacion encontrada: " + indicacion);
+                Listar listar = new Listar();
+                listar.generarPDF(indicacion);
+                //JOptionPane.showMessageDialog(null, "Indicacion encontrada y guardada en PDF");
+            } else {
+                JOptionPane.showMessageDialog(null, "Indicacion no encontrada");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese un ID válido");
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,6 +305,7 @@ public class SolicitudIndicacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonRealizada;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

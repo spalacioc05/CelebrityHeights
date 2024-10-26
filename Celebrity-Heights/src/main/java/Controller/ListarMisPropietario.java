@@ -2,8 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Model;
+package Controller;
 
+import Model.Factura;
+import Model.Multa;
+import Model.Propiedad;
+import Model.Propietario;
+import Model.Visitante;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itextpdf.text.Document;
@@ -203,7 +208,7 @@ public class ListarMisPropietario {
                 br.readLine(); // Skip header
                 while ((line = br.readLine()) != null) {
                     String[] values = line.split(",");
-                    Factura factura = new Factura(values[0], values[1], values[2], values[3], values[4], values[5], values[6], Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9]), Boolean.parseBoolean(values[10]));
+                    Factura factura = new Factura(Integer.parseInt(values[0]), values[1], values[2], values[3], values[4], values[5], values[6], Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9]), Boolean.parseBoolean(values[10]));
                     facturas.add(factura);
                 }
             }

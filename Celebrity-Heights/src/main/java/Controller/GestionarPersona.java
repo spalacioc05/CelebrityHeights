@@ -9,7 +9,7 @@ package Controller;
  * @author spala
  */
 
-public interface Gentionar {
+public interface GestionarPersona {
     boolean registrar(Object obj);
     Object leer(String id);
     boolean actualizar(Object obj);

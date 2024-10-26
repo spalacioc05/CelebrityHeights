@@ -9,7 +9,7 @@ package Model;
  * @author spala
  */
 public class Multa {
-    private String idMulta;
+    private int idMulta;
     private String idPropiedad;
     private String idPropietario;
     private String fechaExpedicion;
@@ -24,7 +24,7 @@ public class Multa {
     public Multa() {
     }
 
-    public Multa(String idMulta, String idPropiedad, String idPropietario, String fechaExpedicion, String fechaVencimiento, String fechaPago, String motivo, double monto, double iva, double montoTotal, boolean pagado) {
+    public Multa(int idMulta, String idPropiedad, String idPropietario, String fechaExpedicion, String fechaVencimiento, String fechaPago, String motivo, double monto, double iva, double montoTotal, boolean pagado) {
         this.idMulta = idMulta;
         this.idPropiedad = idPropiedad;
         this.idPropietario = idPropietario;
@@ -38,11 +38,11 @@ public class Multa {
         this.pagado = pagado;
     }
 
-    public String getIdMulta() {
+    public int getIdMulta() {
         return idMulta;
     }
 
-    public void setIdMulta(String idMulta) {
+    public void setIdMulta(int idMulta) {
         this.idMulta = idMulta;
     }
 

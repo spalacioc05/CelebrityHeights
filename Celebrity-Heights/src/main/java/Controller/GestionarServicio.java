@@ -18,47 +18,56 @@ import java.util.List;
  * @author spala
  */
 
-
 public class GestionarServicio {
-    private static final String csvFile = "data/servicio.csv";
+    private static final String RUTA_ARCHIVO = "data/servicio.csv";
 
     public Indicacion buscarIndicacion(int idIndicacion) {
-        String line;
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (Integer.parseInt(data[0]) == idIndicacion) {
-                    return new Indicacion(idIndicacion, data[1], Boolean.parseBoolean(data[2]));
+        String linea;
+        try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO))) {
+            // Omitir la primera línea (encabezados)
+            br.readLine();
+            
+            while ((linea = br.readLine()) != null) {
+                String[] datos = linea.split(",");
+                System.out.println("Leyendo línea: " + linea);
+                System.out.println("Comparando ID: " + datos[0] + " con " + idIndicacion);
+                if (Integer.parseInt(datos[0]) == idIndicacion) {
+                    System.out.println("ID encontrado: " + idIndicacion);
+                    return new Indicacion(idIndicacion, datos[1], Boolean.parseBoolean(datos[2]));
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("ID no encontrado: " + idIndicacion);
         return null;
     }
 
     public boolean cambiarEstadoIndicacion(int idIndicacion) {
-        String line;
-        List<String> lines = new ArrayList<>();
-        boolean found = false;
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (Integer.parseInt(data[0]) == idIndicacion) {
-                    data[2] = "true";
-                    found = true;
+        String linea;
+        List<String> lineas = new ArrayList<>();
+        boolean encontrado = false;
+    
+        try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO))) {
+            // Omitir la primera línea (encabezados)
+            lineas.add(br.readLine());
+    
+            while ((linea = br.readLine()) != null) {
+                String[] datos = linea.split(",");
+                if (Integer.parseInt(datos[0]) == idIndicacion) {
+                    datos[2] = "true";
+                    encontrado = true;
                 }
-                lines.add(String.join(",", data));
+                lineas.add(String.join(",", datos));
             }
         } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
-
-        if (found) {
-            try (FileWriter fw = new FileWriter(csvFile)) {
-                for (String l : lines) {
+    
+        if (encontrado) {
+            try (FileWriter fw = new FileWriter(RUTA_ARCHIVO)) {
+                for (String l : lineas) {
                     fw.write(l + "\n");
                 }
             } catch (IOException e) {
@@ -66,7 +75,7 @@ public class GestionarServicio {
                 return false;
             }
         }
-
-        return found;
+    
+        return encontrado;
     }
 }

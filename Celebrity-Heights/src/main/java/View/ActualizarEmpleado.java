@@ -5,6 +5,7 @@
 package View;
 
 import Controller.GestionarEmpleado;
+import Controller.Navegacion;
 import Controller.SesionGlobal;
 import Model.Empleado;
 import javax.swing.JOptionPane;
@@ -47,6 +48,7 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButtonActualizar = new javax.swing.JButton();
@@ -109,15 +111,31 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jButtonVolver)
+                .addContainerGap(626, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButtonVolver)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -288,7 +306,7 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonActualizar)
                     .addComponent(jButtonBorrar))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -321,6 +339,8 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
         empleado.setCargo(jTextFieldCargo.getText());
         empleado.setFechaContratacion(jTextFieldFechaContratacion.getText());
         empleado.setSalario(Double.parseDouble(jTextFieldSalario.getText()));
+        empleado.setClave(new String(jPasswordFieldClave.getPassword()));
+        empleado.setFechaNacimiento(jTextFieldFechaNacimiento.getText());
 
         boolean actualizado = gestionarEmpleado.actualizar(empleado);
         if (actualizado) {
@@ -336,12 +356,20 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
             boolean eliminado = gestionarEmpleado.eliminar(empleado.getId());
             if (eliminado) {
                 JOptionPane.showMessageDialog(this, "Empleado eliminado correctamente.");
-                this.dispose(); // Cierra la ventana actual
+                SesionGlobal.logout();
+                this.dispose();
+                Index index = new Index();
+                index.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Error al eliminar el empleado.");
             }
         }
     }//GEN-LAST:event_jButtonBorrarActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void cargarDatosEmpleado(String empleadoId) {
         empleado = gestionarEmpleado.leer(empleadoId);
@@ -354,6 +382,8 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
             jTextFieldCargo.setText(empleado.getCargo());
             jTextFieldFechaContratacion.setText(empleado.getFechaContratacion());
             jTextFieldSalario.setText(String.valueOf(empleado.getSalario()));
+            jPasswordFieldClave.setText(empleado.getClave()); // Añadir clave
+            jTextFieldFechaNacimiento.setText(empleado.getFechaNacimiento()); // Añadir fecha de nacimiento
         } else {
             JOptionPane.showMessageDialog(this, "Empleado no encontrado.");
         }
@@ -397,6 +427,7 @@ public class ActualizarEmpleado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonBorrar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -16,17 +16,17 @@ import java.io.IOException;
 public class GestionarLogin {
 
     public boolean login(String id, String clave, String rol) {
-        String filePath = rol.equals("propietario") ? "data/propietariosPropiedades.json" : "data/empleados.json";
-        ObjectMapper mapper = new ObjectMapper();
+        String rutaArchivo = rol.equals("propietario") ? "data/propietariosPropiedades.json" : "data/empleados.json";
+        ObjectMapper mapeador = new ObjectMapper();
 
         try {
-            JsonNode rootNode = mapper.readTree(new File(filePath));
-            for (JsonNode node : rootNode) {
-                String jsonId = node.get("id").asText();
-                String jsonClave = node.get("clave").asText();
-                String jsonRol = node.get("rol").asText();
+            JsonNode nodoRaiz = mapeador.readTree(new File(rutaArchivo));
+            for (JsonNode nodo : nodoRaiz) {
+                String idJson = nodo.get("id").asText();
+                String claveJson = nodo.get("clave").asText();
+                String rolJson = nodo.get("rol").asText();
 
-                if (id.equals(jsonId) && clave.equals(jsonClave) && rol.equals(jsonRol)) {
+                if (id.equals(idJson) && clave.equals(claveJson) && rol.equals(rolJson)) {
                     return true;
                 }
             }

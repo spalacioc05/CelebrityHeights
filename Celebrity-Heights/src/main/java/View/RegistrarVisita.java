@@ -5,8 +5,9 @@
 package View;
 
 import Controller.GestionarSeguridad;
+import Controller.Navegacion;
 import Model.Visitante;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author spala
@@ -41,6 +42,7 @@ public class RegistrarVisita extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
         jTextFieldNombre = new javax.swing.JTextField();
         jTextFieldIDPropiedad = new javax.swing.JTextField();
@@ -62,9 +64,13 @@ public class RegistrarVisita extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
         jLabel2.setText("ID Visitante");
 
-        jTextFieldIDVisitante.setEditable(false);
         jTextFieldIDVisitante.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDVisitante.setForeground(new java.awt.Color(44, 44, 44));
+        jTextFieldIDVisitante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDVisitanteActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(44, 44, 44));
@@ -84,15 +90,31 @@ public class RegistrarVisita extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButtonVolver)
+                .addContainerGap(630, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButtonVolver)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jButtonGuardar.setBackground(new java.awt.Color(46, 74, 87));
@@ -111,7 +133,6 @@ public class RegistrarVisita extends javax.swing.JFrame {
         jTextFieldIDPropiedad.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDPropiedad.setForeground(new java.awt.Color(44, 44, 44));
 
-        jTextFieldFechaEntrada.setEditable(false);
         jTextFieldFechaEntrada.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldFechaEntrada.setForeground(new java.awt.Color(44, 44, 44));
 
@@ -209,7 +230,7 @@ public class RegistrarVisita extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,15 +253,24 @@ public class RegistrarVisita extends javax.swing.JFrame {
             GestionarSeguridad gestionarSeguridad = new GestionarSeguridad();
 
             if (gestionarSeguridad.registrarVisita(visitante)) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Visita registrada exitosamente.");
+                JOptionPane.showMessageDialog(this, "Visita registrada exitosamente.");
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar la visita.");
+                JOptionPane.showMessageDialog(this, "Error al registrar la visita.");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
         }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jTextFieldIDVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDVisitanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDVisitanteActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,6 +316,7 @@ public class RegistrarVisita extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

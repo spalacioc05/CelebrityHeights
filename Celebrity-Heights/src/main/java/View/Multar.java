@@ -5,8 +5,9 @@
 package View;
 
 import Controller.GestionarMulta;
+import Controller.Navegacion;
 import Model.Multa;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author spala
@@ -20,6 +21,10 @@ public class Multar extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+
+        GestionarMulta gestionarMulta = new GestionarMulta();
+        int idMulta = gestionarMulta.generarIdUnico();
+        jTextFieldIDMulta.setText(String.valueOf(idMulta));
         
     }
 
@@ -41,6 +46,7 @@ public class Multar extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jButtonGuardar = new javax.swing.JButton();
         jTextFieldIDPropiedad = new javax.swing.JTextField();
@@ -86,15 +92,31 @@ public class Multar extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jButtonVolver)
+                .addContainerGap(632, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jButtonVolver)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -114,11 +136,9 @@ public class Multar extends javax.swing.JFrame {
         jTextFieldIDPropiedad.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDPropiedad.setForeground(new java.awt.Color(44, 44, 44));
 
-        jTextFieldIDPropietario.setEditable(false);
         jTextFieldIDPropietario.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDPropietario.setForeground(new java.awt.Color(44, 44, 44));
 
-        jTextFieldFechaExpedicion.setEditable(false);
         jTextFieldFechaExpedicion.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldFechaExpedicion.setForeground(new java.awt.Color(44, 44, 44));
 
@@ -242,7 +262,7 @@ public class Multar extends javax.swing.JFrame {
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
         try {
-            String idMulta = jTextFieldIDMulta.getText();
+            int idMulta = Integer.parseInt(jTextFieldIDMulta.getText());
             String idPropiedad = jTextFieldIDPropiedad.getText();
             String idPropietario = jTextFieldIDPropietario.getText();
             String fechaExpedicion = jTextFieldFechaExpedicion.getText();
@@ -257,15 +277,20 @@ public class Multar extends javax.swing.JFrame {
             GestionarMulta gestionarMulta = new GestionarMulta();
 
             if (gestionarMulta.registrarMulta(multa)) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Multa enviada a junta directiva exitosamente.");
+                JOptionPane.showMessageDialog(this, "Multa enviada a junta directiva exitosamente.");
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar la multa.");
+                JOptionPane.showMessageDialog(this, "Error al registrar la multa.");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
         }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -311,6 +336,7 @@ public class Multar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

@@ -5,7 +5,8 @@
 package View;
 
 import Controller.SesionGlobal;
-import Model.Listar;
+import Controller.Listar;
+import Controller.Navegacion;
 import javax.swing.JOptionPane;
 
 /**
@@ -50,7 +51,7 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         jButtonActualizar.setBackground(new java.awt.Color(197, 168, 128));
         jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonActualizar.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonActualizar.setText("Actulizar Perfil");
+        jButtonActualizar.setText("Actualizar Perfil");
         jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonActualizarActionPerformed(evt);
@@ -135,7 +136,7 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonSolicitudIndicacion))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 127, Short.MAX_VALUE)
+                        .addGap(0, 134, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(121, 121, 121))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -173,22 +174,24 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        Navegacion.setVentanaAnterior(this);
         ActualizarEmpleado actualizarEmpleado = new ActualizarEmpleado();
         actualizarEmpleado.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         SesionGlobal.logout();
         this.dispose();
-        Login login = new Login();
-        login.setVisible(true);
+        Index index = new Index();
+        index.setVisible(true);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonVerSolicitudesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerSolicitudesActionPerformed
         Listar listar = new Listar();
         boolean suseso = listar.ListarIndicacionesPDF();
         if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -198,15 +201,17 @@ public class IndexPersonalServicio extends javax.swing.JFrame {
         Listar listar = new Listar();
         boolean suseso = listar.ListarHorarioZonasComunesPDF();
         if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonHorariosActionPerformed
 
     private void jButtonSolicitudIndicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSolicitudIndicacionActionPerformed
+        Navegacion.setVentanaAnterior(this);
         SolicitudIndicacion solicitudIndicacion = new SolicitudIndicacion();
         solicitudIndicacion.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonSolicitudIndicacionActionPerformed
 
     /**

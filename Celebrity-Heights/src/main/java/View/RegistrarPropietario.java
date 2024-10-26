@@ -5,8 +5,9 @@
 package View;
 
 import Controller.GestionarPropietario;
+import Controller.Navegacion;
 import Model.Propietario;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author spala
@@ -42,6 +43,7 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jButtonRegistrar = new javax.swing.JButton();
         jTextFieldNombre = new javax.swing.JTextField();
@@ -65,7 +67,6 @@ public class RegistrarPropietario extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
         jLabel2.setText("Indentificacion");
 
-        jTextFieldID.setEditable(false);
         jTextFieldID.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldID.setForeground(new java.awt.Color(44, 44, 44));
 
@@ -91,15 +92,31 @@ public class RegistrarPropietario extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jButtonVolver)
+                .addContainerGap(626, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jButtonVolver)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -254,20 +271,31 @@ public class RegistrarPropietario extends javax.swing.JFrame {
             String fechaNacimiento = jTextFieldFechaNacimiento.getText();
             String profesion = jTextFieldProfecion.getText();
             String ocupacion = jTextFieldOcupacion.getText();
-
-            Propietario propietario = new Propietario(profesion, ocupacion, null, id, clave, "propietario", nombre, telefono, correo, fechaNacimiento);
+    
             GestionarPropietario gestionarPropietario = new GestionarPropietario();
-
+    
+            if (gestionarPropietario.existeIdEnArchivos(id)) {
+                JOptionPane.showMessageDialog(this, "El ID ya existe en el sistema.");
+                return;
+            }
+    
+            Propietario propietario = new Propietario(profesion, ocupacion, null, id, clave, "propietario", nombre, telefono, correo, fechaNacimiento);
+    
             if (gestionarPropietario.registrar(propietario)) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Propietario registrado exitosamente.");
+                JOptionPane.showMessageDialog(this, "Propietario registrado exitosamente.");
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar el propietario.");
+                JOptionPane.showMessageDialog(this, "Error al registrar el propietario.");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
         }
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -309,6 +337,7 @@ public class RegistrarPropietario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonRegistrar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

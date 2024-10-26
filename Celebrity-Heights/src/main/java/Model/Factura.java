@@ -10,7 +10,7 @@ package Model;
  */
 
 public class Factura {
-    private String idFactura;
+    private int idFactura;
     private String idPropiedad;
     private String idPropietario;
     private String fechaExpedicion;
@@ -25,7 +25,7 @@ public class Factura {
     public Factura() {
     }
 
-    public Factura(String idFactura, String idPropiedad, String idPropietario, String fechaExpedicion, String fechaVencimiento, String fechaPago, String tipoFactura, double monto, double iva, double montoTotal, boolean pagado) {
+    public Factura(int idFactura, String idPropiedad, String idPropietario, String fechaExpedicion, String fechaVencimiento, String fechaPago, String tipoFactura, double monto, double iva, double montoTotal, boolean pagado) {
         this.idFactura = idFactura;
         this.idPropiedad = idPropiedad;
         this.idPropietario = idPropietario;
@@ -39,11 +39,11 @@ public class Factura {
         this.pagado = pagado;
     }
 
-    public String getIdFactura() {
+    public int getIdFactura() {
         return idFactura;
     }
 
-    public void setIdFactura(String idFactura) {
+    public void setIdFactura(int idFactura) {
         this.idFactura = idFactura;
     }
 

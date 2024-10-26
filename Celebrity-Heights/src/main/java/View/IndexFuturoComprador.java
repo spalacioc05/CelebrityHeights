@@ -4,13 +4,14 @@
  */
 package View;
 
-import Model.Listar;
+import Controller.Listar;
 
 import java.util.Map;
 
 import javax.swing.JOptionPane;
 
 import Controller.GestionarPropietario;
+import Controller.Navegacion;
 
 /**
  *
@@ -38,6 +39,7 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonVerProfecion = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -52,15 +54,31 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 589, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButtonVolver)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jButtonVolver)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
@@ -79,7 +97,7 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
-        jLabel2.setText(" Saber la profecion u ocupacion de mis futuros vecinos");
+        jLabel2.setText(" Saber la profesion u ocupacion de mis futuros vecinos");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(44, 44, 44));
@@ -128,7 +146,7 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(62, 62, 62)
                             .addComponent(jLabel2))))
-                .addGap(0, 82, Short.MAX_VALUE))
+                .addGap(0, 83, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButtonVerHorarios)
@@ -175,7 +193,7 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
         Listar listar = new Listar();
         boolean suseso = listar.ListarHorarioZonasComunesPDF();
         if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -205,6 +223,11 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonVerProfecionActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,6 +282,7 @@ public class IndexFuturoComprador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonVerHorarios;
     private javax.swing.JButton jButtonVerProfecion;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

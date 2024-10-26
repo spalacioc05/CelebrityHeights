@@ -1,51 +1,146 @@
 [
-  
   {
     "id": "1111",
     "clave": "1111",
     "rol": "administrador",
     "nombre": "Juan Pérez",
-    "cargo": "Gerente General",
     "telefono": "3001234567",
     "correo": "juan.perez@empresa.com",
     "fechaNacimiento": "15/02/1980",
+    "cargo": "Gerente General",
     "fechaContratacion": "10/05/2020",
-    "salario": 5000000
+    "salario": 5000000.0
   },
   {
     "id": "2222",
     "clave": "2222",
     "rol": "seguridad",
     "nombre": "Carlos Gómez",
-    "cargo": "Vigilante",
     "telefono": "3009876543",
     "correo": "carlos.gomez@empresa.com",
     "fechaNacimiento": "20/10/1985",
+    "cargo": "Vigilante",
     "fechaContratacion": "15/03/2021",
-    "salario": 2000000
+    "salario": 2000000.0
   },
   {
     "id": "3333",
     "clave": "3333",
     "rol": "servicio",
     "nombre": "María Rodríguez",
-    "cargo": "Aseadora",
     "telefono": "3106543210",
     "correo": "maria.rodriguez@empresa.com",
     "fechaNacimiento": "05/06/1990",
+    "cargo": "Aseadora",
     "fechaContratacion": "01/08/2019",
-    "salario": 1800000
+    "salario": 1800000.0
   },
   {
     "id": "4444",
     "clave": "4444",
     "rol": "juntaDirectiva",
     "nombre": "Ana Martínez",
-    "cargo": "Directora Financiera",
     "telefono": "3011122334",
     "correo": "ana.martinez@empresa.com",
     "fechaNacimiento": "12/12/1975",
+    "cargo": "Directora Financiera",
     "fechaContratacion": "20/09/2018",
-    "salario": 7500000
+    "salario": 7500000.0
+  },
+  {
+    "id": "7777",
+    "clave": "7777",
+    "rol": "servicio",
+    "nombre": "Carmen Paredes",
+    "telefono": "3114455667",
+    "correo": "carmen.paredes@empresa.com",
+    "fechaNacimiento": "14/11/1992",
+    "cargo": "Limpieza de Oficinas",
+    "fechaContratacion": "17/02/2022",
+    "salario": 1900000.0
+  },
+  {
+    "id": "8888",
+    "clave": "8888",
+    "rol": "juntaDirectiva",
+    "nombre": "José Torres",
+    "telefono": "3015566778",
+    "correo": "jose.torres@empresa.com",
+    "fechaNacimiento": "27/05/1973",
+    "cargo": "Director de Operaciones",
+    "fechaContratacion": "05/01/2019",
+    "salario": 7800000.0
+  },
+  {
+    "id": "9999",
+    "clave": "9999",
+    "rol": "administrador",
+    "nombre": "Claudia Rojas",
+    "telefono": "3006677889",
+    "correo": "claudia.rojas@empresa.com",
+    "fechaNacimiento": "03/08/1984",
+    "cargo": "Administradora General",
+    "fechaContratacion": "23/04/2018",
+    "salario": 5000000.0
+  },
+  {
+    "id": "1010",
+    "clave": "1010",
+    "rol": "seguridad",
+    "nombre": "Pedro Sánchez",
+    "telefono": "3007766554",
+    "correo": "pedro.sanchez@empresa.com",
+    "fechaNacimiento": "30/09/1981",
+    "cargo": "Supervisor de Seguridad",
+    "fechaContratacion": "22/06/2020",
+    "salario": 2500000.0
+  },
+  {
+    "id": "2020",
+    "clave": "2020",
+    "rol": "servicio",
+    "nombre": "Laura Ortiz",
+    "telefono": "3123344556",
+    "correo": "laura.ortiz@empresa.com",
+    "fechaNacimiento": "25/04/1991",
+    "cargo": "Encargada de Jardinería",
+    "fechaContratacion": "29/09/2021",
+    "salario": 1850000.0
+  },
+  {
+    "id": "3030",
+    "clave": "3030",
+    "rol": "juntaDirectiva",
+    "nombre": "Marcos Villa",
+    "telefono": "3019988775",
+    "correo": "marcos.villa@empresa.com",
+    "fechaNacimiento": "08/06/1978",
+    "cargo": "Director de Tecnología",
+    "fechaContratacion": "12/12/2017",
+    "salario": 8000000.0
+  },
+  {
+    "id": "4040",
+    "clave": "4040",
+    "rol": "administrador",
+    "nombre": "Luis Fernández",
+    "telefono": "3001122334",
+    "correo": "luis.fernandez@empresa.com",
+    "fechaNacimiento": "18/07/1982",
+    "cargo": "Subgerente",
+    "fechaContratacion": "11/11/2021",
+    "salario": 4500000.0
+  },
+  {
+    "id": "5050",
+    "clave": "5050",
+    "rol": "seguridad",
+    "nombre": "Miguel Salazar",
+    "telefono": "3029988776",
+    "correo": "miguel.salazar@empresa.com",
+    "fechaNacimiento": "09/03/1988",
+    "cargo": "Vigilante Nocturno",
+    "fechaContratacion": "03/07/2020",
+    "salario": 2100000.0
   }
 ]

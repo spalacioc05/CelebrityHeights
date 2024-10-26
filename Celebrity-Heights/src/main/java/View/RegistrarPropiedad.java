@@ -5,8 +5,9 @@
 package View;
 
 import Controller.GestionarPropiedad;
+import Controller.Navegacion;
 import Model.Propiedad;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author spala
@@ -41,6 +42,7 @@ public class RegistrarPropiedad extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jButtonGuardar = new javax.swing.JButton();
         jTextFieldIDPropiedad = new javax.swing.JTextField();
@@ -88,15 +90,31 @@ public class RegistrarPropiedad extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jButtonVolver)
+                .addContainerGap(633, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButtonVolver)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -113,15 +131,17 @@ public class RegistrarPropiedad extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldIDPropiedad.setEditable(false);
         jTextFieldIDPropiedad.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDPropiedad.setForeground(new java.awt.Color(44, 44, 44));
+        jTextFieldIDPropiedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDPropiedadActionPerformed(evt);
+            }
+        });
 
-        jTextFieldDireccionPropiedad.setEditable(false);
         jTextFieldDireccionPropiedad.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldDireccionPropiedad.setForeground(new java.awt.Color(44, 44, 44));
 
-        jTextFieldSizeM2.setEditable(false);
         jTextFieldSizeM2.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldSizeM2.setForeground(new java.awt.Color(44, 44, 44));
 
@@ -277,15 +297,24 @@ public class RegistrarPropiedad extends javax.swing.JFrame {
             GestionarPropiedad gestionarPropiedad = new GestionarPropiedad();
 
             if (gestionarPropiedad.registrarPropiedad(idPropietario, propiedad)) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Propiedad registrada exitosamente.");
+                JOptionPane.showMessageDialog(this, "Propiedad registrada exitosamente.");
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar la propiedad.");
+                JOptionPane.showMessageDialog(this, "Error al registrar la propiedad.");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
         }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jTextFieldIDPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDPropiedadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDPropiedadActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -331,6 +360,7 @@ public class RegistrarPropiedad extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

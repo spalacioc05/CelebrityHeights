@@ -7,7 +7,8 @@ package View;
 import javax.swing.JOptionPane;
 
 import Controller.SesionGlobal;
-import Model.Listar;
+import Controller.Listar;
+import Controller.Navegacion;
 
 /**
  *
@@ -58,7 +59,7 @@ public class IndexAdministrador extends javax.swing.JFrame {
         jButtonActualizar.setBackground(new java.awt.Color(197, 168, 128));
         jButtonActualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonActualizar.setForeground(new java.awt.Color(44, 44, 44));
-        jButtonActualizar.setText("Actulizar Perfil");
+        jButtonActualizar.setText("Actualizar Perfil");
         jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonActualizarActionPerformed(evt);
@@ -274,20 +275,22 @@ public class IndexAdministrador extends javax.swing.JFrame {
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         SesionGlobal.logout();
         this.dispose();
-        Login login = new Login();
-        login.setVisible(true);
+        Index index = new Index();
+        index.setVisible(true);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFacturarActionPerformed
+        Navegacion.setVentanaAnterior(this);
         Facturar facturar = new Facturar();
         facturar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonFacturarActionPerformed
 
     private void jButtonVerFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerFacturasActionPerformed
         Listar listar = new Listar();
         boolean suseso = listar.ListarFacturasPDF();
         if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -297,37 +300,45 @@ public class IndexAdministrador extends javax.swing.JFrame {
         Listar listar = new Listar();
         boolean suseso = listar.ListarPropietariosPDF();
         if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonVerPropietariosActionPerformed
 
     private void jButtonRegistrarPropietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarPropietarioActionPerformed
+        Navegacion.setVentanaAnterior(this);
         RegistrarPropietario registrarPropietario = new RegistrarPropietario();
         registrarPropietario.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonRegistrarPropietarioActionPerformed
 
     private void jButtonRegistrarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarEmpleadoActionPerformed
+        Navegacion.setVentanaAnterior(this);
         RegistrarEmpleado registrarEmpleado = new RegistrarEmpleado();
         registrarEmpleado.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonRegistrarEmpleadoActionPerformed
 
     private void jButtonRegistrarPropiedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarPropiedadActionPerformed
+        Navegacion.setVentanaAnterior(this);
         RegistrarPropiedad registrarPropiedad = new RegistrarPropiedad();
         registrarPropiedad.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonRegistrarPropiedadActionPerformed
 
     private void jButtonMultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultarActionPerformed
+        Navegacion.setVentanaAnterior(this);
         Multar multar = new Multar();
         multar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonMultarActionPerformed
 
     private void jButtonVerEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerEmpleadosActionPerformed
         Listar listar = new Listar();
         boolean suseso = listar.ListarEmpleadosPDF();
         if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -337,7 +348,7 @@ public class IndexAdministrador extends javax.swing.JFrame {
         Listar listar = new Listar();
         boolean suseso = listar.ListarPropiedadesPDF();
         if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -347,15 +358,17 @@ public class IndexAdministrador extends javax.swing.JFrame {
         Listar listar = new Listar();
         boolean suseso = listar.ListarMultasPDF();
         if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonVerMultasActionPerformed
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        Navegacion.setVentanaAnterior(this); // Guarda la ventana actual
         ActualizarEmpleado actualizarEmpleado = new ActualizarEmpleado();
         actualizarEmpleado.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     /**

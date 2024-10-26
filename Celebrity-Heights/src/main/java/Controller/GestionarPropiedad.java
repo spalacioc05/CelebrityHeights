@@ -19,8 +19,8 @@ import java.util.ArrayList;
 
 public class GestionarPropiedad {
 
-    private static final String FILE_PATH = "data/propietariosPropiedades.json";
-    private ObjectMapper mapper = new ObjectMapper();
+    private static final String RUTA_ARCHIVO = "data/propietariosPropiedades.json";
+    private ObjectMapper mapeador = new ObjectMapper();
     private GestionarPropietario gestionarPropietario = new GestionarPropietario();
 
     public boolean registrarPropiedad(String idPropietario, Propiedad propiedad) {
@@ -35,14 +35,14 @@ public class GestionarPropiedad {
                 return false;
             }
 
-            List<Propietario> propietarios = mapper.readValue(new File(FILE_PATH), mapper.getTypeFactory().constructCollectionType(List.class, Propietario.class));
-            for (Propietario propietario : propietarios) {
+            List<Propietario> listaPropietarios = mapeador.readValue(new File(RUTA_ARCHIVO), mapeador.getTypeFactory().constructCollectionType(List.class, Propietario.class));
+            for (Propietario propietario : listaPropietarios) {
                 if (propietario.getId().equals(idPropietario)) {
                     if (propietario.getPropiedades() == null) {
                         propietario.setPropiedades(new ArrayList<>());
                     }
                     propietario.getPropiedades().add(propiedad);
-                    mapper.writeValue(new File(FILE_PATH), propietarios);
+                    mapeador.writeValue(new File(RUTA_ARCHIVO), listaPropietarios);
                     return true;
                 }
             }
@@ -55,8 +55,8 @@ public class GestionarPropiedad {
 
     public boolean propiedadPerteneceAPropietario(String idPropiedad, String idPropietario) {
         try {
-            List<Propietario> propietarios = mapper.readValue(new File(FILE_PATH), mapper.getTypeFactory().constructCollectionType(List.class, Propietario.class));
-            for (Propietario propietario : propietarios) {
+            List<Propietario> listaPropietarios = mapeador.readValue(new File(RUTA_ARCHIVO), mapeador.getTypeFactory().constructCollectionType(List.class, Propietario.class));
+            for (Propietario propietario : listaPropietarios) {
                 if (propietario.getId().equals(idPropietario)) {
                     if (propietario.getPropiedades() != null) {
                         for (Propiedad propiedad : propietario.getPropiedades()) {
@@ -76,8 +76,8 @@ public class GestionarPropiedad {
 
     public boolean existePropiedad(String idPropiedad) {
         try {
-            List<Propietario> propietarios = mapper.readValue(new File(FILE_PATH), mapper.getTypeFactory().constructCollectionType(List.class, Propietario.class));
-            for (Propietario propietario : propietarios) {
+            List<Propietario> listaPropietarios = mapeador.readValue(new File(RUTA_ARCHIVO), mapeador.getTypeFactory().constructCollectionType(List.class, Propietario.class));
+            for (Propietario propietario : listaPropietarios) {
                 if (propietario.getPropiedades() != null) {
                     for (Propiedad propiedad : propietario.getPropiedades()) {
                         if (propiedad.getIdPropiedad().equals(idPropiedad)) {

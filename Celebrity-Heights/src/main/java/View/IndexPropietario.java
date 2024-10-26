@@ -5,8 +5,9 @@
 package View;
 
 import Controller.SesionGlobal;
-import Model.Listar;
-import Model.ListarMisPropietario;
+import Controller.Listar;
+import Controller.ListarMisPropietario;
+import Controller.Navegacion;
 
 import javax.swing.JOptionPane;
 
@@ -204,15 +205,17 @@ public class IndexPropietario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        Navegacion.setVentanaAnterior(this);
         ActualizarPropietario actualizarPropietario = new ActualizarPropietario();
         actualizarPropietario.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         SesionGlobal.logout();
         this.dispose();
-        Login login = new Login();
-        login.setVisible(true);
+        Index index = new Index();
+        index.setVisible(true);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonListarMisPropiedadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonListarMisPropiedadesActionPerformed
@@ -243,7 +246,7 @@ public class IndexPropietario extends javax.swing.JFrame {
         Listar listar = new Listar();
         boolean suseso = listar.ListarHorarioZonasComunesPDF();
         if (suseso) {
-            JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "El PDF se generó y abrió correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
         }

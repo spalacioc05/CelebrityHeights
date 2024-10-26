@@ -5,7 +5,8 @@
 package View;
 
 import Controller.GestionarMulta;
-import Model.ListarMulta;
+import Controller.Listar;
+import Controller.Navegacion;
 import Model.Multa;
 import javax.swing.JOptionPane;
 
@@ -39,9 +40,9 @@ public class SolicitudMulta extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextFieldIDMulta = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
         jButtonBuscar = new javax.swing.JButton();
-        jButtonEliminar = new javax.swing.JButton();
         jButtonRechazar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,21 +57,36 @@ public class SolicitudMulta extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
         jLabel2.setText("ID Multa");
 
-        jTextFieldIDMulta.setEditable(false);
         jTextFieldIDMulta.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDMulta.setForeground(new java.awt.Color(44, 44, 44));
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jButtonVolver)
+                .addContainerGap(444, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButtonVolver)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jButtonGuardar.setBackground(new java.awt.Color(46, 74, 87));
@@ -110,9 +126,6 @@ public class SolicitudMulta extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(jButtonEliminar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -150,7 +163,6 @@ public class SolicitudMulta extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(516, 516, 516)
-                        .addComponent(jButtonEliminar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -186,9 +198,9 @@ public class SolicitudMulta extends javax.swing.JFrame {
         GestionarMulta gestionarMulta = new GestionarMulta();
         Multa multa = gestionarMulta.buscarMultaPorId(idMulta);
         if (multa != null) {
-            ListarMulta listarMulta = new ListarMulta();
-            listarMulta.crearYMostrarPDFMulta(multa);
-            JOptionPane.showMessageDialog(null, "Multa encontrada. Se ha generado un archivo PDF con la información de la multa.");
+            Listar listar = new Listar();
+            listar.crearYMostrarPDFMulta(multa);
+            //JOptionPane.showMessageDialog(null, "Multa encontrada. Se ha generado un archivo PDF con la información de la multa.");
         } else {
             JOptionPane.showMessageDialog(null, "No se encontró la multa con el ID ingresado.");
         }
@@ -204,6 +216,12 @@ public class SolicitudMulta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se pudo eliminar la multa.");
         }
     }//GEN-LAST:event_jButtonRechazarActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -273,9 +291,9 @@ public class SolicitudMulta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
-    private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JButton jButtonRechazar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

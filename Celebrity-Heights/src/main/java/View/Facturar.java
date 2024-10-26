@@ -5,7 +5,9 @@
 package View;
 
 import Controller.GestionarFactura;
+import Controller.Navegacion;
 import Model.Factura;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +22,10 @@ public class Facturar extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+
+        GestionarFactura gestionarFactura = new GestionarFactura();
+        int idFactura = gestionarFactura.generarIdFacturaUnico();
+        jTextFieldIDFactura.setText(String.valueOf(idFactura));
         
     }
 
@@ -41,6 +47,7 @@ public class Facturar extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jButtonGuardar = new javax.swing.JButton();
         jTextFieldIDPropiedad = new javax.swing.JTextField();
@@ -66,6 +73,11 @@ public class Facturar extends javax.swing.JFrame {
         jTextFieldIDFactura.setEditable(false);
         jTextFieldIDFactura.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDFactura.setForeground(new java.awt.Color(44, 44, 44));
+        jTextFieldIDFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDFacturaActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(44, 44, 44));
@@ -85,15 +97,31 @@ public class Facturar extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jButtonVolver)
+                .addContainerGap(636, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jButtonVolver)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -113,11 +141,9 @@ public class Facturar extends javax.swing.JFrame {
         jTextFieldIDPropiedad.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDPropiedad.setForeground(new java.awt.Color(44, 44, 44));
 
-        jTextFieldIDPropietario.setEditable(false);
         jTextFieldIDPropietario.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldIDPropietario.setForeground(new java.awt.Color(44, 44, 44));
 
-        jTextFieldFechaExpedicion.setEditable(false);
         jTextFieldFechaExpedicion.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldFechaExpedicion.setForeground(new java.awt.Color(44, 44, 44));
 
@@ -234,7 +260,8 @@ public class Facturar extends javax.swing.JFrame {
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
         try {
-            String idFactura = jTextFieldIDFactura.getText();
+            GestionarFactura gestionarFactura = new GestionarFactura();
+            int idFactura = Integer.parseInt(jTextFieldIDFactura.getText()); // Obtener el ID de la factura desde jTextFieldIDFactura
             String idPropiedad = jTextFieldIDPropiedad.getText();
             String idPropietario = jTextFieldIDPropietario.getText();
             String fechaExpedicion = jTextFieldFechaExpedicion.getText();
@@ -244,20 +271,28 @@ public class Facturar extends javax.swing.JFrame {
             double iva = monto * 0.19;
             double montoTotal = monto + iva;
             boolean pagado = false;
-
+    
             Factura factura = new Factura(idFactura, idPropiedad, idPropietario, fechaExpedicion, fechaVencimiento, "", tipoFactura, monto, iva, montoTotal, pagado);
-            GestionarFactura gestionarFactura = new GestionarFactura();
-
+    
             if (gestionarFactura.registrarFactura(factura)) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Factura registrada exitosamente.");
+                JOptionPane.showMessageDialog(this, "Factura registrada exitosamente.");
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar la factura.");
+                JOptionPane.showMessageDialog(this, "Error al registrar la factura.");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
         }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jTextFieldIDFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDFacturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDFacturaActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,6 +334,7 @@ public class Facturar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JComboBox<String> jComboBoxTipoFactura;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;

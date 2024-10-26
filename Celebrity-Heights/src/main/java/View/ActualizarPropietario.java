@@ -7,6 +7,7 @@ package View;
 import javax.swing.JOptionPane;
 
 import Controller.GestionarPropietario;
+import Controller.Navegacion;
 import Controller.SesionGlobal;
 import Model.Propietario;
 
@@ -51,6 +52,7 @@ public class ActualizarPropietario extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jButtonActualizar = new javax.swing.JButton();
         jTextFieldNombre = new javax.swing.JTextField();
@@ -106,15 +108,31 @@ public class ActualizarPropietario extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jButtonVolver)
+                .addContainerGap(627, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButtonVolver)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -306,12 +324,20 @@ public class ActualizarPropietario extends javax.swing.JFrame {
         boolean eliminado = gestionarPropietario.eliminar(propietario.getId());
         if (eliminado) {
             JOptionPane.showMessageDialog(this, "Propietario eliminado correctamente.");
-            this.dispose(); // Cierra la ventana actual
+            SesionGlobal.logout();
+            this.dispose();
+            Index index = new Index();
+            index.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Error al eliminar el propietario.");
         }
     }
     }//GEN-LAST:event_jButtonBorrarActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void cargarDatosPropietario(String propietarioId) {
         propietario = gestionarPropietario.leer(propietarioId);
@@ -369,6 +395,7 @@ public class ActualizarPropietario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonBorrar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

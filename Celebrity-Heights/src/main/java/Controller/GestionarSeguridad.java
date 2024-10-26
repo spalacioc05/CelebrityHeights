@@ -19,8 +19,8 @@ import java.util.ArrayList;
  */
 
 public class GestionarSeguridad {
-    private static final String FILE_PATH_VISITANTES = "data/seguridad.csv";
-    private static final String FILE_PATH_INDICACIONES = "data/servicio.csv";
+    private static final String RUTA_ARCHIVO_VISITANTES = "data/seguridad.csv";
+    private static final String RUTA_ARCHIVO_INDICACIONES = "data/servicio.csv";
     private GestionarPropiedad gestionarPropiedad = new GestionarPropiedad();
 
     public boolean registrarVisita(Visitante visitante) {
@@ -30,9 +30,9 @@ public class GestionarSeguridad {
                 return false;
             }
 
-            List<Visitante> visitantes = leerVisitantes();
-            visitantes.add(visitante);
-            escribirVisitantes(visitantes);
+            List<Visitante> listaVisitantes = leerVisitantes();
+            listaVisitantes.add(visitante);
+            escribirVisitantes(listaVisitantes);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,32 +41,32 @@ public class GestionarSeguridad {
     }
 
     private List<Visitante> leerVisitantes() {
-        List<Visitante> visitantes = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH_VISITANTES))) {
-            String line;
-            br.readLine(); // Skip header
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
+        List<Visitante> listaVisitantes = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO_VISITANTES))) {
+            String linea;
+            br.readLine();
+            while ((linea = br.readLine()) != null) {
+                String[] valores = linea.split(",");
                 Visitante visitante = new Visitante(
-                        values[0],
-                        values[1],
-                        values[2],
-                        values[3],
-                        values[4],
-                        values[5]
+                        valores[0],
+                        valores[1],
+                        valores[2],
+                        valores[3],
+                        valores[4],
+                        valores[5]
                 );
-                visitantes.add(visitante);
+                listaVisitantes.add(visitante);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return visitantes;
+        return listaVisitantes;
     }
 
-    private void escribirVisitantes(List<Visitante> visitantes) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH_VISITANTES))) {
+    private void escribirVisitantes(List<Visitante> listaVisitantes) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(RUTA_ARCHIVO_VISITANTES))) {
             bw.write("idVisitante,nombreVisitante,idPropiedad,fechaEntrada,horaEntrada,motivo\n");
-            for (Visitante visitante : visitantes) {
+            for (Visitante visitante : listaVisitantes) {
                 bw.write(String.format("%s,%s,%s,%s,%s,%s\n",
                         visitante.getIdVisitante(),
                         visitante.getNombreVisitante(),
@@ -83,11 +83,11 @@ public class GestionarSeguridad {
 
     public boolean enviarIndicacion(Indicacion indicacion) {
         try {
-            List<Indicacion> indicaciones = leerIndicaciones();
-            int nuevoId = indicaciones.isEmpty() ? 1 : indicaciones.get(indicaciones.size() - 1).getIdIndicacion() + 1;
+            List<Indicacion> listaIndicaciones = leerIndicaciones();
+            int nuevoId = listaIndicaciones.isEmpty() ? 1 : listaIndicaciones.get(listaIndicaciones.size() - 1).getIdIndicacion() + 1;
             indicacion.setIdIndicacion(nuevoId);
-            indicaciones.add(indicacion);
-            escribirIndicaciones(indicaciones);
+            listaIndicaciones.add(indicacion);
+            escribirIndicaciones(listaIndicaciones);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -96,29 +96,29 @@ public class GestionarSeguridad {
     }
 
     private List<Indicacion> leerIndicaciones() {
-        List<Indicacion> indicaciones = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH_INDICACIONES))) {
-            String line;
-            br.readLine(); // Skip header
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
+        List<Indicacion> listaIndicaciones = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO_INDICACIONES))) {
+            String linea;
+            br.readLine(); // Saltar encabezado
+            while ((linea = br.readLine()) != null) {
+                String[] valores = linea.split(",");
                 Indicacion indicacion = new Indicacion(
-                        Integer.parseInt(values[0]),
-                        values[1],
-                        Boolean.parseBoolean(values[2])
+                        Integer.parseInt(valores[0]),
+                        valores[1],
+                        Boolean.parseBoolean(valores[2])
                 );
-                indicaciones.add(indicacion);
+                listaIndicaciones.add(indicacion);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return indicaciones;
+        return listaIndicaciones;
     }
 
-    private void escribirIndicaciones(List<Indicacion> indicaciones) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH_INDICACIONES))) {
+    private void escribirIndicaciones(List<Indicacion> listaIndicaciones) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(RUTA_ARCHIVO_INDICACIONES))) {
             bw.write("idIndicacion,indicacion,estado\n");
-            for (Indicacion indicacion : indicaciones) {
+            for (Indicacion indicacion : listaIndicaciones) {
                 bw.write(String.format("%d,%s,%b\n",
                         indicacion.getIdIndicacion(),
                         indicacion.getIndicacion(),

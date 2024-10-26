@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -16,9 +17,9 @@ import java.util.ArrayList;
  */
 
 public class GestionarMulta {
-    private static final String FILE_PATH_MULTAS = "data/multas.json";
-    private static final String FILE_PATH_MULTAS_PENDIENTES = "data/multasPendientes.json";
-    private ObjectMapper mapper = new ObjectMapper();
+    private static final String RUTA_ARCHIVO_MULTAS = "data/multas.json";
+    private static final String RUTA_ARCHIVO_MULTAS_PENDIENTES = "data/multasPendientes.json";
+    private ObjectMapper mapeador = new ObjectMapper();
     private GestionarPropietario gestionarPropietario = new GestionarPropietario();
     private GestionarPropiedad gestionarPropiedad = new GestionarPropiedad();
 
@@ -34,25 +35,25 @@ public class GestionarMulta {
                 return false;
             }
 
-            List<Multa> multas = leerMultas(FILE_PATH_MULTAS);
-            List<Multa> multasPendientes = leerMultas(FILE_PATH_MULTAS_PENDIENTES);
+            List<Multa> listaMultas = leerMultas(RUTA_ARCHIVO_MULTAS);
+            List<Multa> listaMultasPendientes = leerMultas(RUTA_ARCHIVO_MULTAS_PENDIENTES);
 
-            for (Multa m : multas) {
-                if (m.getIdMulta().equals(multa.getIdMulta())) {
+            for (Multa m : listaMultas) {
+                if (m.getIdMulta() == multa.getIdMulta()) {
                     System.out.println("El ID de la multa no es único.");
                     return false;
                 }
             }
 
-            for (Multa m : multasPendientes) {
-                if (m.getIdMulta().equals(multa.getIdMulta())) {
+            for (Multa m : listaMultasPendientes) {
+                if (m.getIdMulta() == multa.getIdMulta()) {
                     System.out.println("El ID de la multa no es único.");
                     return false;
                 }
             }
 
-            multasPendientes.add(multa);
-            escribirMultas(multasPendientes, FILE_PATH_MULTAS_PENDIENTES);
+            listaMultasPendientes.add(multa);
+            escribirMultas(listaMultasPendientes, RUTA_ARCHIVO_MULTAS_PENDIENTES);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -60,28 +61,28 @@ public class GestionarMulta {
         }
     }
 
-    private List<Multa> leerMultas(String filePath) {
-        List<Multa> multas = new ArrayList<>();
+    private List<Multa> leerMultas(String rutaArchivo) {
+        List<Multa> listaMultas = new ArrayList<>();
         try {
-            multas = mapper.readValue(new File(filePath), mapper.getTypeFactory().constructCollectionType(List.class, Multa.class));
+            listaMultas = mapeador.readValue(new File(rutaArchivo), mapeador.getTypeFactory().constructCollectionType(List.class, Multa.class));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return multas;
+        return listaMultas;
     }
 
-    private void escribirMultas(List<Multa> multas, String filePath) {
+    private void escribirMultas(List<Multa> listaMultas, String rutaArchivo) {
         try {
-            mapper.writeValue(new File(filePath), multas);
+            mapeador.writeValue(new File(rutaArchivo), listaMultas);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public Multa buscarMultaPorId(String idMulta) {
-        List<Multa> multasPendientes = leerMultas(FILE_PATH_MULTAS_PENDIENTES);
-        for (Multa multa : multasPendientes) {
-            if (multa.getIdMulta().equals(idMulta)) {
+        List<Multa> listaMultasPendientes = leerMultas(RUTA_ARCHIVO_MULTAS_PENDIENTES);
+        for (Multa multa : listaMultasPendientes) {
+            if (multa.getIdMulta() == Integer.parseInt(idMulta)) {
                 return multa;
             }
         }
@@ -89,17 +90,17 @@ public class GestionarMulta {
     }
 
     public boolean eliminarMultaPendiente(String idMulta) {
-        List<Multa> multasPendientes = leerMultas(FILE_PATH_MULTAS_PENDIENTES);
+        List<Multa> listaMultasPendientes = leerMultas(RUTA_ARCHIVO_MULTAS_PENDIENTES);
         Multa multaAEliminar = null;
-        for (Multa multa : multasPendientes) {
-            if (multa.getIdMulta().equals(idMulta)) {
+        for (Multa multa : listaMultasPendientes) {
+            if (multa.getIdMulta() == Integer.parseInt(idMulta)) {
                 multaAEliminar = multa;
                 break;
             }
         }
         if (multaAEliminar != null) {
-            multasPendientes.remove(multaAEliminar);
-            escribirMultas(multasPendientes, FILE_PATH_MULTAS_PENDIENTES);
+            listaMultasPendientes.remove(multaAEliminar);
+            escribirMultas(listaMultasPendientes, RUTA_ARCHIVO_MULTAS_PENDIENTES);
             return true;
         }
         return false;
@@ -108,12 +109,43 @@ public class GestionarMulta {
     public boolean reescribirMultas(String idMulta) {
         Multa multa = buscarMultaPorId(idMulta);
         if (multa != null) {
-            List<Multa> multas = leerMultas(FILE_PATH_MULTAS);
-            multas.add(multa);
-            escribirMultas(multas, FILE_PATH_MULTAS);
+            List<Multa> listaMultas = leerMultas(RUTA_ARCHIVO_MULTAS);
+            listaMultas.add(multa);
+            escribirMultas(listaMultas, RUTA_ARCHIVO_MULTAS);
             return eliminarMultaPendiente(idMulta);
         }
         return false;
+    }
+
+    public int generarIdUnico() {
+        Random random = new Random();
+        List<Multa> listaMultas = leerMultas(RUTA_ARCHIVO_MULTAS);
+        List<Multa> listaMultasPendientes = leerMultas(RUTA_ARCHIVO_MULTAS_PENDIENTES);
+        int id;
+        boolean idUnico;
+
+        do {
+            id = 10000 + random.nextInt(90000);
+            idUnico = true;
+
+            for (Multa m : listaMultas) {
+                if (m.getIdMulta() == id) {
+                    idUnico = false;
+                    break;
+                }
+            }
+
+            if (idUnico) {
+                for (Multa m : listaMultasPendientes) {
+                    if (m.getIdMulta() == id) {
+                        idUnico = false;
+                        break;
+                    }
+                }
+            }
+        } while (!idUnico);
+
+        return id;
     }
 
 }

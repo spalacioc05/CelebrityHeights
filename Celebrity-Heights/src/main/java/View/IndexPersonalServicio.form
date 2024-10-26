@@ -53,7 +53,7 @@
                           <Component id="jButtonSolicitudIndicacion" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="127" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="134" max="32767" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="325" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -129,7 +129,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="2c" green="2c" red="2c" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Actulizar Perfil"/>
+                <Property name="text" type="java.lang.String" value="Actualizar Perfil"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonActualizarActionPerformed"/>

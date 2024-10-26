@@ -5,7 +5,12 @@
 package View;
 
 import Controller.GestionarEmpleado;
+import Controller.GestionarPropietario;
+import Controller.Navegacion;
 import Model.Empleado;
+import Model.Propietario;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,6 +48,7 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButtonVolver = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButtonRegistar = new javax.swing.JButton();
@@ -69,7 +75,6 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
         jLabel2.setText("Indentificacion");
 
-        jTextFieldID.setEditable(false);
         jTextFieldID.setBackground(new java.awt.Color(176, 176, 176));
         jTextFieldID.setForeground(new java.awt.Color(44, 44, 44));
 
@@ -99,15 +104,31 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(197, 168, 128));
 
+        jButtonVolver.setBackground(new java.awt.Color(197, 168, 128));
+        jButtonVolver.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonVolver.setForeground(new java.awt.Color(44, 44, 44));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButtonVolver)
+                .addContainerGap(630, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButtonVolver)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -295,19 +316,30 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
             String fechaContratacion = jTextFieldFechaContratacion.getText();
             double salario = Double.parseDouble(jTextFieldSalario.getText());
 
-            Empleado empleado = new Empleado(cargo, fechaContratacion, salario, id, clave, rol, nombre, telefono, correo, fechaNacimiento);
             GestionarEmpleado gestionarEmpleado = new GestionarEmpleado();
 
+            if (gestionarEmpleado.existeIdEnArchivos(id)) {
+                JOptionPane.showMessageDialog(this, "El ID ya existe en el sistema.");
+                return;
+            }
+
+            Empleado empleado = new Empleado(cargo, fechaContratacion, salario, id, clave, rol, nombre, telefono, correo, fechaNacimiento);
+
             if (gestionarEmpleado.registrar(empleado)) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Empleado registrado exitosamente.");
+                JOptionPane.showMessageDialog(this, "Empleado registrado exitosamente.");
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error al registrar el empleado.");
+                JOptionPane.showMessageDialog(this, "Error al registrar el empleado.");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
         }
     }//GEN-LAST:event_jButtonRegistarActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Navegacion.navegarVentanaAnterior();
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -347,6 +379,7 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonRegistar;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JComboBox<String> jComboBoxRol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

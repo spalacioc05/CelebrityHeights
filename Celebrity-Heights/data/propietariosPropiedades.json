@@ -1,58 +1,170 @@
 [
-  {
-    "id": "5555",
-    "clave": "5555",
-    "rol": "propietario",
-    "nombre": "Luis Torres",
-    "profesion": "Ingeniero Civil",
-    "ocupacion": "Gerente de Proyectos",
-    "telefono": "3001234568",
-    "correo": "luis.torres@empresa.com",
-    "fechaNacimiento": "22/07/1980",
-    "propiedades": [
-      {
-        "idPropiedad": "401",
-        "direccionPropiedad": "Carrera 70, Zona 4, Centro recidencial Celebrity Heights",
-        "sizeM2": 150,
-        "habitaciones": 3,
-        "bathrooms": 2,
-        "precioM2": 20000,
-        "fechaAdquisicion": "12/06/2021",
-        "valorAdministracion": 600000
-      },
-      {
-        "idPropiedad": "802",
-        "direccionPropiedad": "Carrera 70, Zona 8, Centro recidencial Celebrity Heights",
-        "sizeM2": 80,
-        "habitaciones": 2,
-        "bathrooms": 1,
-        "precioM2": 30000,
-        "fechaAdquisicion": "25/11/2019",
-        "valorAdministracion": 300000
-      }
-    ]
-  },
-  {
-    "id": "6666",
-    "clave": "6666",
-    "rol": "propietario",
-    "nombre": "Ana Sánchez",
-    "profesion": "Arquitecta",
-    "ocupacion": "Diseñadora de Interiores",
-    "telefono": "3109876543",
-    "correo": "ana.sanchez@empresa.com",
-    "fechaNacimiento": "10/09/1985",
-    "propiedades": [
-      {
-        "idPropiedad": "701",
-        "direccionPropiedad": "Carrera 70, Zona 7, Centro recidencial Celebrity Heights",
-        "sizeM2": 200,
-        "habitaciones": 4,
-        "bathrooms": 3,
-        "precioM2": 15000,
-        "fechaAdquisicion": "15/02/2020",
-        "valorAdministracion": 350000
-      }
-    ]
-  }
+    {
+        "id": "5555",
+        "clave": "5555",
+        "rol": "propietario",
+        "nombre": "Luis Torres",
+        "telefono": "3001234568",
+        "correo": "luis.torres@empresa.com",
+        "fechaNacimiento": "22/07/1980",
+        "profesion": "Ingeniero Civil",
+        "ocupacion": "Gerente de Proyectos",
+        "propiedades": [
+            {
+                "idPropiedad": "401",
+                "direccionPropiedad": "Carrera 70, Zona 4, Centro recidencial Celebrity Heights",
+                "sizeM2": 150.0,
+                "habitaciones": 3,
+                "bathrooms": 2,
+                "precioM2": 20000.0,
+                "fechaAdquisicion": "12/06/2021",
+                "valorAdministracion": 600000.0
+            },
+            {
+                "idPropiedad": "802",
+                "direccionPropiedad": "Carrera 70, Zona 8, Centro recidencial Celebrity Heights",
+                "sizeM2": 80.0,
+                "habitaciones": 2,
+                "bathrooms": 1,
+                "precioM2": 30000.0,
+                "fechaAdquisicion": "25/11/2019",
+                "valorAdministracion": 300000.0
+            }
+        ]
+    },
+    {
+        "id": "6666",
+        "clave": "6666",
+        "rol": "propietario",
+        "nombre": "Ana Sánchez",
+        "telefono": "3109876543",
+        "correo": "ana.sanchez@empresa.com",
+        "fechaNacimiento": "10/09/1985",
+        "profesion": "Arquitecta",
+        "ocupacion": "Diseñadora de Interiores",
+        "propiedades": [
+            {
+                "idPropiedad": "701",
+                "direccionPropiedad": "Carrera 70, Zona 7, Centro recidencial Celebrity Heights",
+                "sizeM2": 200.0,
+                "habitaciones": 4,
+                "bathrooms": 3,
+                "precioM2": 15000.0,
+                "fechaAdquisicion": "15/02/2020",
+                "valorAdministracion": 350000.0
+            }
+        ]
+    },
+    {
+        "id": "6060",
+        "clave": "6060",
+        "rol": "propietario",
+        "nombre": "Carlos Díaz",
+        "telefono": "3112233445",
+        "correo": "carlos.diaz@empresa.com",
+        "fechaNacimiento": "14/04/1979",
+        "profesion": "Abogado",
+        "ocupacion": "Socio de Firma Legal",
+        "propiedades": [
+            {
+                "idPropiedad": "502",
+                "direccionPropiedad": "Carrera 70, Zona 5, Centro residencial Celebrity Heights",
+                "sizeM2": 95.0,
+                "habitaciones": 2,
+                "bathrooms": 2,
+                "precioM2": 28000.0,
+                "fechaAdquisicion": "20/03/2018",
+                "valorAdministracion": 250000.0
+            },
+            {
+                "idPropiedad": "103",
+                "direccionPropiedad": "Carrera 70, Zona 1, Centro residencial Celebrity Heights",
+                "sizeM2": 130.0,
+                "habitaciones": 3,
+                "bathrooms": 2,
+                "precioM2": 26000.0,
+                "fechaAdquisicion": "05/07/2020",
+                "valorAdministracion": 500000.0
+            }
+        ]
+    },
+    {
+        "id": "7070",
+        "clave": "7070",
+        "rol": "propietario",
+        "nombre": "Laura García",
+        "telefono": "3123344556",
+        "correo": "laura.garcia@empresa.com",
+        "fechaNacimiento": "02/11/1983",
+        "profesion": "Economista",
+        "ocupacion": "Consultora Financiera",
+        "propiedades": [
+            {
+                "idPropiedad": "302",
+                "direccionPropiedad": "Carrera 70, Zona 3, Centro residencial Celebrity Heights",
+                "sizeM2": 75.0,
+                "habitaciones": 1,
+                "bathrooms": 1,
+                "precioM2": 32000.0,
+                "fechaAdquisicion": "10/10/2017",
+                "valorAdministracion": 180000.0
+            }
+        ]
+    },
+    {
+        "id": "8080",
+        "clave": "8080",
+        "rol": "propietario",
+        "nombre": "Miguel Rojas",
+        "telefono": "3104455667",
+        "correo": "miguel.rojas@empresa.com",
+        "fechaNacimiento": "05/05/1975",
+        "profesion": "Médico",
+        "ocupacion": "Director de Clínica",
+        "propiedades": [
+            {
+                "idPropiedad": "201",
+                "direccionPropiedad": "Carrera 70, Zona 2, Centro residencial Celebrity Heights",
+                "sizeM2": 120.0,
+                "habitaciones": 3,
+                "bathrooms": 2,
+                "precioM2": 24000.0,
+                "fechaAdquisicion": "25/04/2019",
+                "valorAdministracion": 450000.0
+            },
+            {
+                "idPropiedad": "601",
+                "direccionPropiedad": "Carrera 70, Zona 6, Centro residencial Celebrity Heights",
+                "sizeM2": 100.0,
+                "habitaciones": 2,
+                "bathrooms": 2,
+                "precioM2": 27000.0,
+                "fechaAdquisicion": "19/08/2021",
+                "valorAdministracion": 300000.0
+            }
+        ]
+    },
+    {
+        "id": "9090",
+        "clave": "9090",
+        "rol": "propietario",
+        "nombre": "Sandra Pineda",
+        "telefono": "3135566778",
+        "correo": "sandra.pineda@empresa.com",
+        "fechaNacimiento": "22/01/1990",
+        "profesion": "Contadora",
+        "ocupacion": "Auditora",
+        "propiedades": [
+            {
+                "idPropiedad": "104",
+                "direccionPropiedad": "Carrera 70, Zona 1, Centro residencial Celebrity Heights",
+                "sizeM2": 85.0,
+                "habitaciones": 2,
+                "bathrooms": 1,
+                "precioM2": 29000.0,
+                "fechaAdquisicion": "30/11/2020",
+                "valorAdministracion": 280000.0
+            }
+        ]
+    }
 ]

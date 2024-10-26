@@ -54,7 +54,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(44, 44, 44));
-        jLabel2.setText("Identificaion");
+        jLabel2.setText("Identificacion");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(44, 44, 44));
@@ -65,6 +65,7 @@ public class Login extends javax.swing.JFrame {
 
         jPasswordFieldClave.setBackground(new java.awt.Color(176, 176, 176));
         jPasswordFieldClave.setForeground(new java.awt.Color(44, 44, 44));
+
 
         jButtonIngresar.setBackground(new java.awt.Color(46, 74, 87));
         jButtonIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -114,8 +115,8 @@ public class Login extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(40, 40, 40)
+                                    .addComponent(jLabel2))
+                                .addGap(34, 34, 34)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jPasswordFieldClave, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -186,7 +187,7 @@ public class Login extends javax.swing.JFrame {
                     new IndexPersonalSeguridad().setVisible(true);
                     break;
                 case "servicio":
-                    new IndexPersonalSeguridad().setVisible(true);
+                    new IndexPersonalServicio().setVisible(true);
                     break;
                 case "juntaDirectiva":
                     new IndexJuntaDirectiva().setVisible(true);
